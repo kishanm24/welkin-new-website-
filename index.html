@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welkin Technohub PVT.LTD — Home</title>
+  <meta name="description" content="Welkin Technohub PVT.LTD — Professional IT services company in Ahmedabad. Custom web development, mobile apps, UI/UX design, and QA testing.">
+  <link rel="icon" href="assets/img/favicon32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <style>
+    :root{--blue:#2566C8;--blue-dark:#1a4fa0;--blue-light:#dbeafe;--blue-xlight:#EEF4FF;--navy:#0D1B3E;--text:#111827;--muted:#6B7280;--border:#E5E7EB;--white:#fff;--bg-soft:#F8FAFF;--shadow:0 4px 24px rgba(37,102,200,.08);--shadow-lg:0 16px 48px rgba(37,102,200,.16);--shadow-xl:0 24px 64px rgba(37,102,200,.22);--radius:16px;--radius-sm:10px;--t:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;animation:pgFadeIn .55s ease both}
+    @keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
+    a{text-decoration:none;transition:var(--t)}
+    img{max-width:100%}
+    p{margin-bottom:0}
+
+    /* ── NAVBAR ── */
+    #mainNav{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:var(--t);z-index:1000}
+    #mainNav.scrolled{background:rgba(255,255,255,.98);box-shadow:0 4px 32px rgba(0,0,0,.10);padding:9px 0}
+    .navbar-brand img{height:46px;transition:var(--t)}
+    .navbar-brand img:hover{transform:scale(1.04)}
+    .navbar-toggler{border:none;background:none;padding:6px;outline:none!important;box-shadow:none!important}
+    .nav-ham{display:flex;flex-direction:column;gap:5px;width:24px}
+    .nav-ham span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:all .32s cubic-bezier(.4,0,.2,1)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-link{font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--navy)!important;padding:6px 14px!important;position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .28s cubic-bezier(.4,0,.2,1);border-radius:2px;transform-origin:center}
+    .nav-link:hover::after,.nav-link.active-page::after{transform:scaleX(1)}
+    .nav-link.active-page{color:var(--blue)!important;font-weight:600}
+    .nav-cta{background:var(--blue)!important;color:var(--white)!important;border-radius:50px!important;padding:9px 24px!important;margin-left:8px;box-shadow:0 4px 16px rgba(37,102,200,.28)}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,102,200,.38)!important}
+    @media(max-width:991px){.navbar-nav{padding:12px 0 20px}.nav-link{padding:10px 8px!important;min-height:44px;display:flex;align-items:center}.nav-cta{margin:10px 8px 0!important;text-align:center;justify-content:center}}
+    @media(max-width:991px){#navMenu{display:block!important;max-height:0;overflow:hidden;transition:max-height .35s ease}#navMenu.show{max-height:500px}}
+
+    /* ── BUTTONS ── */
+    .btn-blue{background:var(--blue);color:var(--white);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:var(--t);cursor:pointer;position:relative;overflow:hidden}
+    .btn-blue::before{content:'';position:absolute;top:-50%;left:-120%;width:60%;height:200%;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);animation:btnSweep 3.5s ease-in-out infinite 2.8s;pointer-events:none}
+    .btn-blue:hover{background:var(--blue-dark);border-color:var(--blue-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,102,200,.38)}
+    .btn-outline{background:transparent;color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-outline:hover{background:var(--blue);color:var(--white);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,102,200,.22)}
+    .btn-white{background:var(--white);color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,.3);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-white:hover{background:var(--blue-xlight);color:var(--blue);transform:translateY(-2px)}
+
+    /* ── SECTION TITLE SYSTEM ── */
+    .s-badge{display:inline-flex;align-items:center;gap:7px;background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px;border:1px solid var(--blue-light)}
+    .s-badge::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulseDot 2s ease infinite}
+    @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.5}}
+    .s-title{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
+    .s-title span{color:var(--blue)}
+    .s-line{width:52px;height:4px;background:linear-gradient(90deg,var(--blue),#60A5FA);border-radius:2px;margin:14px 0 24px}
+    .s-line.c{margin:14px auto 24px}
+    .s-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.78}
+
+    /* ── HERO ── */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;background:var(--white);position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(37,102,200,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 10% 80%,rgba(37,102,200,.04) 0%,transparent 60%)}
+    .hero-dots{position:absolute;width:260px;height:260px;background-image:radial-gradient(circle,rgba(37,102,200,.15) 1.5px,transparent 1.5px);background-size:22px 22px;bottom:80px;left:20px;animation:dotsDrift 18s ease-in-out infinite alternate}
+    @keyframes dotsDrift{from{transform:translateY(0)}to{transform:translateY(-20px)}}
+    .shape-float{position:absolute;pointer-events:none}
+    .sf-circle-lg{width:420px;height:420px;border-radius:50%;border:1px solid rgba(37,102,200,.08);top:-80px;right:-80px;animation:sfRotate 30s linear infinite}
+    .sf-circle-sm{width:180px;height:180px;border-radius:50%;border:2px solid rgba(37,102,200,.06);bottom:60px;left:60px;animation:sfRotate 20s linear infinite reverse}
+    .sf-square{width:60px;height:60px;background:rgba(37,102,200,.04);border-radius:12px;transform:rotate(25deg);top:30%;right:20%;animation:sfFloat 7s ease-in-out infinite}
+    .sf-tri{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:52px solid rgba(37,102,200,.04);bottom:30%;right:40%;animation:sfFloat 9s ease-in-out infinite 2s}
+    @keyframes sfRotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    @keyframes sfFloat{0%,100%{transform:translateY(0) rotate(25deg)}50%{transform:translateY(-22px) rotate(30deg)}}
+    .hero-badge-pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;padding:8px 18px;border-radius:50px;margin-bottom:24px;border:1px solid var(--blue-light);animation:pgFadeIn .6s .2s both}
+    .pulse{width:8px;height:8px;background:var(--blue);border-radius:50%;animation:pulseAnim 2.2s infinite}
+    @keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .hero-h1{font-size:clamp(34px,5.5vw,64px);font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:22px;letter-spacing:-1.5px;animation:pgFadeIn .7s .35s both}
+    .hero-h1 em{color:var(--blue);font-style:normal;position:relative}
+    .cursor{display:inline-block;width:3px;height:.85em;background:var(--blue);vertical-align:-.05em;margin-left:2px;animation:blink .8s step-end infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .hero-p{font-size:17px;color:var(--muted);max-width:490px;line-height:1.8;margin-bottom:36px;animation:pgFadeIn .7s .5s both}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;animation:pgFadeIn .7s .65s both}
+    .hero-img-col{position:relative;display:flex;align-items:center;justify-content:center}
+    .hero-glow-ring{position:absolute;width:480px;height:480px;border-radius:50%;border:1.5px solid rgba(37,102,200,.1);z-index:0;animation:glowPulse 3.5s ease-in-out infinite}
+    .hero-glow-ring2{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(37,102,200,.07) 0%,transparent 70%);z-index:1;animation:glowPulse 3.5s ease-in-out infinite .5s}
+    @keyframes glowPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.7}}
+    .hero-img-col img{max-height:440px;position:relative;z-index:2;will-change:transform}
+    @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+    @media(max-width:991px){.hero-img-col{margin-top:48px}}
+    @media(max-width:767px){#hero{padding:110px 0 60px}.hero-img-col{display:none}.hero-h1{letter-spacing:-.5px}}
+
+    /* ── HERO ENHANCED ANIMATIONS ── */
+    .hero-blob{position:absolute;width:680px;height:680px;top:50%;right:-100px;transform:translateY(-50%);background:radial-gradient(ellipse,rgba(37,102,200,.09) 0%,rgba(96,165,250,.04) 42%,transparent 70%);border-radius:30% 70% 70% 30%/30% 30% 70% 70%;animation:blobMorph 16s ease-in-out infinite;pointer-events:none;z-index:0}
+    @keyframes blobMorph{0%,100%{border-radius:30% 70% 70% 30%/30% 30% 70% 70%;transform:translateY(-50%)}33%{border-radius:58% 42% 75% 25%/76% 46% 54% 24%;transform:translateY(-53%)}66%{border-radius:33% 67% 58% 42%/63% 68% 32% 37%;transform:translateY(-47%)}}
+    .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+    .hero-particles span{position:absolute;border-radius:50%;background:rgba(37,102,200,.22);animation:particleFly linear infinite}
+    @keyframes particleFly{0%{opacity:0;transform:translateY(0) scale(0)}8%{opacity:1}85%{opacity:.1}100%{opacity:0;transform:translateY(-100vh) scale(1.4)}}
+    .hero-h1{animation:none!important}
+    .hero-word{display:inline-block;overflow:hidden;vertical-align:bottom}
+    .hero-word-inner{display:inline-block;transform:translateY(110%);opacity:0;animation:wordUp .9s cubic-bezier(.16,1,.3,1) both}
+    @keyframes wordUp{to{transform:translateY(0);opacity:1}}
+    .hero-h1 em{background:linear-gradient(120deg,#1552a8 0%,#2566C8 25%,#4A90D9 45%,#7EC8F8 62%,#2566C8 80%,#1552a8 100%)!important;background-size:250% 100%!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;animation:gradientPan 4s linear infinite!important;font-style:normal!important;position:relative}
+    @keyframes gradientPan{0%{background-position:0% center}100%{background-position:250% center}}
+    .hero-badge-pill{position:relative!important;overflow:hidden!important}
+    .hero-badge-pill::before{content:'';position:absolute;top:-50%;left:-120%;width:70%;height:200%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.5) 50%,transparent 80%);animation:badgeSweep 5s ease-in-out infinite 2.5s;pointer-events:none;z-index:1}
+    @keyframes badgeSweep{0%{left:-120%}45%,100%{left:200%}}
+    @keyframes btnSweep{0%{left:-120%}45%,100%{left:200%}}
+    .tech-pill{position:absolute;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(37,102,200,.18);border-radius:50px;padding:8px 15px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(37,102,200,.13),inset 0 1px 0 rgba(255,255,255,.8);white-space:nowrap;animation:pillAppear .5s ease both,pillFloat ease-in-out infinite;z-index:4;pointer-events:none}
+    .tp-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+    @keyframes pillAppear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pillFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+
+    /* ── STATS ── */
+    #stats{background:var(--navy);padding:60px 0;position:relative;overflow:hidden}
+    #stats::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,102,200,.25) 0%,transparent 60%)}
+    #stats::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.03) 50%,transparent 100%);background-size:200% 100%;animation:statShimmer 5s ease-in-out infinite}
+    @keyframes statShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .stat-item{text-align:center;position:relative;z-index:1;padding:8px 0}
+    .stat-item+.stat-item::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,.1)}
+    .stat-num{font-family:'Poppins',sans-serif;font-size:clamp(38px,4.5vw,54px);font-weight:800;color:var(--white);line-height:1;margin-bottom:8px}
+    .stat-num .plus{color:#60A5FA;font-size:.75em}
+    .stat-lbl{font-size:13.5px;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.6px;text-transform:uppercase}
+    @media(max-width:767px){.stat-item+.stat-item::before{display:none}}
+
+    /* ── ABOUT TEASER ── */
+    #about-home{padding:104px 0;background:var(--bg-soft);position:relative;overflow:hidden}
+    #about-home::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(37,102,200,.05),transparent 70%);pointer-events:none}
+    .about-img-box{position:relative;display:flex;justify-content:center;align-items:center}
+    .about-img-box img{max-height:390px;position:relative;z-index:2;filter:drop-shadow(0 20px 40px rgba(37,102,200,.1))}
+    .about-badge-card{position:absolute;bottom:10px;left:-10px;background:var(--white);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-xl);display:flex;align-items:center;gap:12px;z-index:3;border:1px solid var(--blue-light);animation:cardFloat 4s ease-in-out infinite}
+    @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .abc-icon{width:44px;height:44px;background:var(--blue-xlight);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:26px;flex-shrink:0}
+    .abc-text strong{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:24px;color:var(--navy);line-height:1}
+    .abc-text span{font-size:12px;color:var(--muted)}
+    .about-copy p{color:var(--muted);font-size:16px;line-height:1.82;margin-bottom:16px}
+    .check-list{list-style:none;padding:0;margin:20px 0 32px}
+    .check-list li{display:flex;align-items:center;gap:12px;color:var(--text);font-size:15px;margin-bottom:12px;transition:var(--t)}
+    .check-list li:hover{padding-left:4px}
+    .check-list li i{width:22px;height:22px;background:var(--blue-xlight);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:14px;flex-shrink:0}
+
+    /* ── SERVICES PREVIEW ── */
+    #services-home{padding:104px 0}
+    .svc-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:36px 28px;height:100%;transition:var(--t);position:relative;overflow:hidden}
+    .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA);transform:scaleX(0);transition:transform .35s cubic-bezier(.4,0,.2,1);transform-origin:left}
+    .svc-card::after{content:attr(data-num);position:absolute;top:16px;right:20px;font-family:'Poppins',sans-serif;font-weight:800;font-size:72px;color:rgba(37,102,200,.05);line-height:1;pointer-events:none;transition:var(--t)}
+    .svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:transparent;background:rgba(255,255,255,.98)}
+    .svc-card:hover::before{transform:scaleX(1)}
+    .svc-card:hover::after{color:rgba(37,102,200,.08)}
+    .svc-icon{width:60px;height:60px;background:var(--blue-xlight);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:28px;margin-bottom:20px;transition:var(--t)}
+    .svc-card:hover .svc-icon{background:var(--blue);color:var(--white);transform:scale(1.08) rotate(-5deg)}
+    .svc-card h4{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px}
+    .svc-card p{color:var(--muted);font-size:14.5px;line-height:1.74}
+    .svc-more{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;margin-top:16px;transition:var(--t)}
+    .svc-more:hover{gap:10px}
+
+    /* ── CLIENTS ── */
+    #clients-home{padding:80px 0;background:var(--bg-soft)}
+    .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:center}
+    .client-tile{display:flex;align-items:center;justify-content:center;padding:24px 20px;background:var(--white);border-radius:var(--radius-sm);border:1.5px solid var(--border);transition:var(--t)}
+    .client-tile img{max-height:44px;max-width:120px;filter:grayscale(1) opacity(.45);transition:var(--t)}
+    .client-tile:hover{box-shadow:var(--shadow-lg);border-color:var(--blue-light);transform:translateY(-3px)}
+    .client-tile:hover img{filter:none}
+    @media(max-width:767px){.clients-grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* ── CTA BANNER ── */
+    #cta-home{padding:96px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);position:relative;overflow:hidden;text-align:center}
+    #cta-home::before{content:'';position:absolute;right:-120px;top:-120px;width:500px;height:500px;border:80px solid rgba(255,255,255,.04);border-radius:50%;animation:ctaRot 25s linear infinite}
+    #cta-home::after{content:'';position:absolute;left:-80px;bottom:-100px;width:340px;height:340px;border:55px solid rgba(255,255,255,.03);border-radius:50%;animation:ctaRot 18s linear infinite reverse}
+    @keyframes ctaRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .cta-h{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+    .cta-p{color:rgba(255,255,255,.62);font-size:17px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75}
+
+    /* ── FOOTER ── */
+    #footer{background:var(--navy);padding:80px 0 0;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
+    #footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA,var(--blue));animation:statShimmer 4s ease-in-out infinite}
+    .footer-brand img{height:40px;filter:brightness(0) invert(1);margin-bottom:18px;transition:var(--t)}
+    .footer-brand img:hover{opacity:.85}
+    .footer-about{font-size:14px;line-height:1.78;margin-bottom:22px;max-width:260px}
+    .f-socials{display:flex;gap:10px}
+    .f-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:18px;transition:var(--t)}
+    .f-soc:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    .f-head{font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;color:var(--white);margin-bottom:20px;padding-bottom:10px;position:relative}
+    .f-head::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--blue);border-radius:2px}
+    .f-list{list-style:none;padding:0}
+    .f-list li{margin-bottom:10px}
+    .f-list a{color:rgba(255,255,255,.6);font-size:14px;transition:var(--t);display:flex;align-items:center;gap:6px}
+    .f-list a:hover{color:var(--white);padding-left:5px}
+    .f-list a i{color:var(--blue);font-size:15px;flex-shrink:0;transition:var(--t)}
+    .f-contact-row{display:flex;gap:12px;margin-bottom:14px;font-size:14px}
+    .f-contact-row i{color:var(--blue);font-size:19px;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:56px;padding:20px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.35)}
+
+    /* ── BACK TO TOP ── */
+    #btt{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:var(--t);z-index:9999;cursor:pointer;box-shadow:0 4px 20px rgba(37,102,200,.45)}
+    #btt::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,102,200,.4);opacity:0;transition:var(--t)}
+    #btt.show{opacity:1;visibility:visible}
+    #btt.show::after{opacity:1;animation:bttPing 2.4s ease-out infinite 1s}
+    #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
+    @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin Technohub">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <div class="nav-ham"><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active-page" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-dots"></div>
+    <div class="shape-float sf-circle-lg"></div>
+    <div class="shape-float sf-circle-sm"></div>
+    <div class="shape-float sf-square"></div>
+    <div class="shape-float sf-tri"></div>
+    <div class="hero-blob"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+  </div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="hero-badge-pill"><span class="pulse"></span> Trusted IT Partner Since 2020</div>
+        <h1 class="hero-h1">Building Digital<br>Solutions That<br><em id="typewriter">Truly Matter</em><span class="cursor"></span></h1>
+        <p class="hero-p">We transform your business ideas into powerful digital products — web applications, mobile apps, and enterprise software — built with precision by our Ahmedabad-based team.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn-blue">Get Started <i class="bx bx-right-arrow-alt"></i></a>
+          <a href="projects.html" class="btn-outline">View Our Work</a>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-img-col" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+        <div class="hero-glow-ring"></div>
+        <div class="hero-glow-ring2"></div>
+        <img src="assets/img/hero-img.svg" alt="Digital Solutions Illustration">
+        <div class="tech-pill" style="top:10%;right:4%;animation-duration:4.5s;animation-delay:1.5s,1.5s"><span class="tp-dot" style="background:#61DAFB"></span>React.js</div>
+        <div class="tech-pill" style="top:44%;left:4%;animation-duration:5.8s;animation-delay:1.9s,1.9s"><span class="tp-dot" style="background:#DD0031"></span>Angular</div>
+        <div class="tech-pill" style="bottom:22%;right:5%;animation-duration:4.2s;animation-delay:2.2s,2.2s"><span class="tp-dot" style="background:#8892BF"></span>Laravel</div>
+        <div class="tech-pill" style="bottom:6%;left:16%;animation-duration:6.2s;animation-delay:2.6s,2.6s"><span class="tp-dot" style="background:#54C5F8"></span>Flutter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up">
+          <div class="stat-num"><span class="counter" data-target="50">0</span><span class="plus">+</span></div>
+          <div class="stat-lbl">Projects Delivered</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="80">
+          <div class="stat-num"><span class="counter" data-target="30">0</span><span class="plus">+</span></div>
+          <div class="stat-lbl">Happy Clients</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="stat-num"><span class="counter" data-target="5">0</span><span class="plus">+</span></div>
+          <div class="stat-lbl">Years Experience</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="240">
+          <div class="stat-num"><span class="counter" data-target="4">0</span></div>
+          <div class="stat-lbl">Core Services</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section id="about-home">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
+        <div class="about-img-box">
+          <img src="assets/img/about-img.svg" alt="About Welkin Technohub">
+          <div class="about-badge-card">
+            <div class="abc-icon"><i class="bx bx-trophy"></i></div>
+            <div class="abc-text">
+              <strong>5+</strong>
+              <span>Years of Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 about-copy" data-aos="fade-left" data-aos-duration="800">
+        <div class="s-badge">About Us</div>
+        <h2 class="s-title">Why Choose Welkin as Your <span>Development Partner?</span></h2>
+        <div class="s-line"></div>
+        <p>Since 2020, Welkin Technohub has been delivering high-quality digital solutions from the heart of Ahmedabad. We combine deep technical expertise with creative thinking to build products that drive real business growth.</p>
+        <p>Our approach is simple: understand your vision, craft a tailored strategy, and deliver with precision. We don't just build software — we build lasting partnerships.</p>
+        <ul class="check-list">
+          <li><i class="bx bx-check"></i> Tailor-made solutions for every business need</li>
+          <li><i class="bx bx-check"></i> On-time delivery with transparent communication</li>
+          <li><i class="bx bx-check"></i> Post-launch support and long-term partnership</li>
+          <li><i class="bx bx-check"></i> Experienced team of developers, designers &amp; QA engineers</li>
+        </ul>
+        <a href="about.html" class="btn-blue">Learn More About Us <i class="bx bx-right-arrow-alt"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section id="services-home">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-badge">What We Do</div>
+      <h2 class="s-title">Our Core <span>Services</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">Comprehensive digital solutions, tailored to your business goals and delivered with excellence.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="svc-card" data-num="01">
+          <div class="svc-icon"><i class="bx bx-globe"></i></div>
+          <h4>Web Development</h4>
+          <p>Custom web applications built with Laravel, PHP, .Net, React.js, and Angular.js for scalable business growth.</p>
+          <a href="services.html" class="svc-more">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+        <div class="svc-card" data-num="02">
+          <div class="svc-icon"><i class="bx bx-mobile-alt"></i></div>
+          <h4>Mobile App Development</h4>
+          <p>Native iOS &amp; Android apps plus cross-platform solutions that end users love and adopt quickly.</p>
+          <a href="services.html" class="svc-more">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+        <div class="svc-card" data-num="03">
+          <div class="svc-icon"><i class="bx bx-palette"></i></div>
+          <h4>UI/UX Design</h4>
+          <p>Intuitive, visually engaging interfaces — from wireframes and prototypes to polished visual identities.</p>
+          <a href="services.html" class="svc-more">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+        <div class="svc-card" data-num="04">
+          <div class="svc-icon"><i class="bx bx-check-shield"></i></div>
+          <h4>QA &amp; Testing</h4>
+          <p>Rigorous manual and automated testing ensuring your software is production-ready and bug-free.</p>
+          <a href="services.html" class="svc-more">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="services.html" class="btn-outline">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients-home">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-badge">Our Clients</div>
+      <h2 class="s-title">Trusted By <span>Leading Brands</span></h2>
+      <div class="s-line c"></div>
+    </div>
+    <div class="clients-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="client-tile"><img src="assets/img/clients/client-1.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-2.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-3.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-4.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-5.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-6.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-7.png" alt="Client"></div>
+      <div class="client-tile"><img src="assets/img/clients/client-8.png" alt="Client"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section id="cta-home">
+  <div class="container position-relative" style="z-index:2">
+    <p class="cta-h" data-aos="fade-up">Ready to Start Your Next Project?</p>
+    <p class="cta-p" data-aos="fade-up" data-aos-delay="80">Let's build something great together. Our team is ready to bring your vision to life.</p>
+    <div data-aos="fade-up" data-aos-delay="160" class="d-flex gap-4 justify-content-center flex-wrap">
+      <a href="contact.html" class="btn-white">Get in Touch <i class="bx bx-envelope"></i></a>
+      <a href="projects.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35)">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="footer-brand"><img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin"></div>
+        <p class="footer-about">A professional IT services company delivering custom web, mobile, and enterprise solutions from Ahmedabad, Gujarat, India.</p>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/people/Welkin-Ithub/100070013418901/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/welkin.technohub?igsh=eXRicmwxamNzcWVr" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/80903734/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="f-head">Quick Links</div>
+        <ul class="f-list">
+          <li><a href="index.html"><i class="bx bx-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="bx bx-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
+          <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
+          <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="f-head">Services</div>
+        <ul class="f-list">
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Web Development</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Mobile Apps</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>UI/UX Design</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>QA &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="f-head">Contact Info</div>
+        <div class="f-contact-row"><i class="bx bx-map"></i><span>C-1034 Siddhi Vinayak Tower, Makarba, Ahmedabad-380051, Gujarat, India</span></div>
+        <div class="f-contact-row"><i class="bx bx-envelope"></i><span>info@welkinhub.in<br>hr@welkinhub.in</span></div>
+        <div class="f-contact-row"><i class="bx bx-phone"></i><span>+91 82001 93827<br>+91 96648 46337</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">&copy; 2025 Welkin Technohub PVT.LTD. All Rights Reserved. Designed &amp; Developed by Welkin Technohub.</div>
+  </div>
+</footer>
+
+<a href="#" id="btt" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+
+  // Navbar scroll
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+
+  // Back to top
+  const btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>320));
+  btt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+
+  // Mobile nav toggle
+  const toggler=document.querySelector('.navbar-toggler');
+  const navMenu=document.getElementById('navMenu');
+  toggler.addEventListener('click',function(){
+    const open=navMenu.classList.toggle('show');
+    toggler.classList.toggle('collapsed',!open);
+    toggler.setAttribute('aria-expanded',open);
+  });
+  navMenu.querySelectorAll('.nav-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+      if(window.innerWidth<992){
+        navMenu.classList.remove('show');
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // Stats counter with easing
+  const counters=document.querySelectorAll('.counter');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const target=+e.target.dataset.target;
+        const duration=1600;
+        const start=performance.now();
+        const run=now=>{
+          const elapsed=now-start;
+          const progress=Math.min(elapsed/duration,1);
+          const ease=1-Math.pow(1-progress,4);
+          e.target.textContent=Math.floor(ease*target);
+          if(progress<1) requestAnimationFrame(run);
+          else e.target.textContent=target;
+        };
+        requestAnimationFrame(run);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.6});
+  counters.forEach(c=>io.observe(c));
+
+  // Typewriter effect
+  const phrases=['Truly Matter','Drive Growth','Last Long','Scale Fast'];
+  let pi=0,ci=0,deleting=false;
+  const tw=document.getElementById('typewriter');
+  function typeStep(){
+    const word=phrases[pi];
+    if(!deleting){
+      tw.textContent=word.slice(0,ci+1);ci++;
+      if(ci===word.length){deleting=true;setTimeout(typeStep,2000);return;}
+    }else{
+      tw.textContent=word.slice(0,ci-1);ci--;
+      if(ci===0){deleting=false;pi=(pi+1)%phrases.length;}
+    }
+    setTimeout(typeStep,deleting?55:95);
+  }
+  setTimeout(typeStep,1200);
+
+  // Floating particles
+  (function(){
+    var pc=document.getElementById('heroParticles');
+    if(!pc)return;
+    for(var i=0;i<22;i++){
+      var s=document.createElement('span');
+      var sz=Math.random()*5+2;
+      s.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(Math.random()*100)+'%;bottom:-2%;animation-duration:'+(Math.random()*20+12)+'s;animation-delay:'+(Math.random()*18)+'s;opacity:'+(Math.random()*.3+.08);
+      pc.appendChild(s);
+    }
+  })();
+
+  // Word-by-word reveal on hero h1
+  (function(){
+    var h1=document.querySelector('.hero-h1');
+    if(!h1)return;
+    var delay=0.22;
+    Array.from(h1.childNodes).forEach(function(node){
+      if(node.nodeType===3&&node.textContent.trim()){
+        var words=node.textContent.trim().split(/\s+/);
+        var frag=document.createDocumentFragment();
+        words.forEach(function(w,i){
+          if(i>0)frag.appendChild(document.createTextNode(' '));
+          var outer=document.createElement('span');outer.className='hero-word';
+          var inner=document.createElement('span');inner.className='hero-word-inner';
+          inner.textContent=w;inner.style.animationDelay=delay+'s';
+          delay+=0.13;
+          outer.appendChild(inner);frag.appendChild(outer);
+        });
+        frag.appendChild(document.createTextNode(' '));
+        node.replaceWith(frag);
+      }
+    });
+  })();
+
+  // Hero image: smooth float + mouse parallax tilt
+  (function(){
+    var hero=document.getElementById('hero');
+    var img=hero?hero.querySelector('.hero-img-col img'):null;
+    if(!img)return;
+    var mx=0,my=0,tx=0,ty=0,t0=performance.now();
+    hero.addEventListener('mousemove',function(e){
+      var r=hero.getBoundingClientRect();
+      mx=((e.clientX-r.left)/r.width-.5)*2;
+      my=((e.clientY-r.top)/r.height-.5)*2;
+    });
+    hero.addEventListener('mouseleave',function(){mx=0;my=0;});
+    function frame(now){
+      tx+=(mx-tx)*.06;ty+=(my-ty)*.06;
+      var fy=Math.sin((now-t0)/5500*Math.PI*2)*-20;
+      img.style.transform='perspective(1000px) rotateY('+(tx*7)+'deg) rotateX('+(-ty*5)+'deg) translateY('+fy+'px)';
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+</script>
+</body>
+</html>

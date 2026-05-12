@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Career — Welkin Technohub PVT.LTD</title>
+  <meta name="description" content="Get in touch with Welkin Technohub PVT.LTD — Ahmedabad's leading IT services company. Contact us for projects or career opportunities.">
+  <link rel="icon" href="assets/img/favicon32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <style>
+    :root{--blue:#2566C8;--blue-dark:#1a4fa0;--blue-light:#dbeafe;--blue-xlight:#EEF4FF;--navy:#0D1B3E;--text:#111827;--muted:#6B7280;--border:#E5E7EB;--white:#fff;--bg-soft:#F8FAFF;--shadow:0 4px 24px rgba(37,102,200,.08);--shadow-lg:0 16px 48px rgba(37,102,200,.16);--shadow-xl:0 24px 64px rgba(37,102,200,.22);--radius:16px;--radius-sm:10px;--t:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;animation:pgFadeIn .55s ease both}
+    @keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
+    a{text-decoration:none;transition:var(--t)}
+    img{max-width:100%}
+    p{margin-bottom:0}
+
+    /* ── NAVBAR ── */
+    #mainNav{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:var(--t);z-index:1000}
+    #mainNav.scrolled{background:rgba(255,255,255,.98);box-shadow:0 4px 32px rgba(0,0,0,.10);padding:9px 0}
+    .navbar-brand img{height:46px;transition:var(--t)}
+    .navbar-toggler{border:none;background:none;padding:6px;outline:none!important;box-shadow:none!important}
+    .nav-ham{display:flex;flex-direction:column;gap:5px;width:24px}
+    .nav-ham span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:all .32s cubic-bezier(.4,0,.2,1)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-link{font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--navy)!important;padding:6px 14px!important;position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .28s cubic-bezier(.4,0,.2,1);border-radius:2px;transform-origin:center}
+    .nav-link:hover::after,.nav-link.active-page::after{transform:scaleX(1)}
+    .nav-link.active-page{color:var(--blue)!important;font-weight:600}
+    .nav-cta{background:var(--blue)!important;color:var(--white)!important;border-radius:50px!important;padding:9px 24px!important;margin-left:8px;box-shadow:0 4px 16px rgba(37,102,200,.28)}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+    @media(max-width:991px){.navbar-nav{padding:12px 0 20px}.nav-link{padding:10px 8px!important;min-height:44px;display:flex;align-items:center}.nav-cta{margin:10px 8px 0!important;text-align:center;justify-content:center}}
+    @media(max-width:991px){#navMenu{display:block!important;max-height:0;overflow:hidden;transition:max-height .35s ease}#navMenu.show{max-height:500px}}
+
+    /* ── BUTTONS ── */
+    .btn-blue{background:var(--blue);color:var(--white);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:var(--t);cursor:pointer}
+    .btn-blue:hover{background:var(--blue-dark);border-color:var(--blue-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,102,200,.38)}
+    .btn-white{background:var(--white);color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,.3);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-white:hover{background:var(--blue-xlight);color:var(--blue);transform:translateY(-2px)}
+    .btn-outline-sm{background:transparent;color:var(--blue);padding:10px 24px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:6px;transition:var(--t)}
+    .btn-outline-sm:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+
+    /* ── SECTION TITLE SYSTEM ── */
+    .s-badge{display:inline-flex;align-items:center;gap:7px;background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px;border:1px solid var(--blue-light)}
+    .s-badge::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulseDot 2s ease infinite}
+    @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.5}}
+    .s-title{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
+    .s-title span{color:var(--blue)}
+    .s-line{width:52px;height:4px;background:linear-gradient(90deg,var(--blue),#60A5FA);border-radius:2px;margin:14px 0 24px}
+    .s-line.c{margin:14px auto 24px}
+    .s-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.78}
+
+    /* ── PAGE BANNER ── */
+    .page-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);padding:140px 0 70px;position:relative;overflow:hidden}
+    .pb-stripes{position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 80px);pointer-events:none}
+    .page-banner::before{content:'';position:absolute;right:-140px;top:-140px;width:560px;height:560px;border:90px solid rgba(255,255,255,.04);border-radius:50%;animation:bannerRot 30s linear infinite}
+    @keyframes bannerRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .pb-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,102,200,.3);color:rgba(255,255,255,.92);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(255,255,255,.15)}
+    .pb-title{font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-.8px}
+    .breadcrumb{background:none;padding:0;margin:0}
+    .breadcrumb-item a{color:rgba(255,255,255,.55);font-size:14px}
+    .breadcrumb-item a:hover{color:rgba(255,255,255,.9)}
+    .breadcrumb-item.active{color:rgba(255,255,255,.85);font-size:14px}
+    .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
+
+    /* ── CONTACT SECTION ── */
+    #contact-section{padding:104px 0;background:var(--bg-soft)}
+    .contact-info-card{background:var(--white);border-radius:var(--radius);padding:38px 34px;box-shadow:var(--shadow);height:100%;border:1.5px solid var(--border)}
+    .contact-info-card h3{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .contact-info-card > p{color:var(--muted);font-size:15px;line-height:1.72;margin-bottom:30px}
+    .ci-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;padding:14px;border-radius:var(--radius-sm);transition:var(--t)}
+    .ci-item:hover{background:var(--bg-soft)}
+    .ci-icon{width:46px;height:46px;background:var(--blue-xlight);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:22px;flex-shrink:0;transition:var(--t)}
+    .ci-item:hover .ci-icon{background:var(--blue);color:var(--white)}
+    .ci-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px}
+    .ci-value{font-size:15px;color:var(--text);font-weight:500;line-height:1.6}
+    .ci-value a{color:var(--text);transition:var(--t)}
+    .ci-value a:hover{color:var(--blue)}
+    .ci-socials{display:flex;gap:10px;margin:6px 0 0 14px}
+    .ci-soc{width:38px;height:38px;border-radius:50%;background:var(--blue-xlight);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:18px;transition:var(--t)}
+    .ci-soc:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    .map-wrap{border-radius:var(--radius-sm);overflow:hidden;margin-top:28px;border:1.5px solid var(--border)}
+    .map-wrap iframe{display:block;width:100%;height:240px}
+
+    /* ── CONTACT FORM ── */
+    .contact-form-card{background:var(--white);border-radius:var(--radius);padding:40px 36px;box-shadow:var(--shadow);height:100%;border:1.5px solid var(--border)}
+    .contact-form-card h3{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .contact-form-card > p{color:var(--muted);font-size:15px;line-height:1.72;margin-bottom:28px}
+    .fl-group{margin-bottom:20px}
+    .fl-group label{display:block;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:8px;letter-spacing:.2px}
+    .fl-group label .req{color:var(--blue)}
+    .fl-group .form-control{border:2px solid var(--border);border-radius:var(--radius-sm);padding:13px 16px;font-size:15px;color:var(--text);transition:var(--t);background:var(--white);width:100%;outline:none;font-family:'DM Sans',sans-serif;min-height:52px;line-height:1.5}
+    .fl-group .form-control::placeholder{color:#9CA3AF;font-size:14px}
+    .fl-group .form-control:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,102,200,.1)}
+    .fl-group textarea.form-control{resize:vertical;min-height:150px;padding-top:13px}
+    .fl-group .select-wrap{position:relative}
+    .fl-group select.form-control{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:40px;color:var(--text)}
+    .fl-group select.form-control.empty{color:#9CA3AF}
+    .select-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:18px}
+    .fl-group .form-control:-webkit-autofill{-webkit-box-shadow:0 0 0 100px var(--white) inset!important;-webkit-text-fill-color:var(--text)!important}
+    .form-msg{padding:13px 18px;border-radius:var(--radius-sm);font-size:14px;display:none;margin-top:16px;font-weight:500;align-items:center;gap:8px}
+    .form-msg.success{background:#d1fae5;color:#065f46;border:1px solid #6ee7b7}
+    .form-msg.error-msg{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
+    .btn-submit{background:var(--blue);color:var(--white);padding:15px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:none;display:inline-flex;align-items:center;gap:8px;transition:var(--t);cursor:pointer;width:100%;justify-content:center}
+    .btn-submit:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,102,200,.38)}
+    .btn-submit:disabled{opacity:.65;cursor:not-allowed;transform:none;box-shadow:none}
+
+    /* ── CAREER SECTION ── */
+    #career{padding:104px 0}
+    .job-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:28px;height:100%;transition:var(--t);position:relative;overflow:hidden}
+    .job-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue-light);transition:width .3s ease,background .3s ease}
+    .job-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-xl);border-color:transparent}
+    .job-card:hover::before{width:6px;background:var(--blue)}
+    .job-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:12px}
+    .job-title{font-size:18px;font-weight:700;color:var(--navy);transition:var(--t)}
+    .job-card:hover .job-title{color:var(--blue)}
+    .job-badge-type{background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;padding:5px 14px;border-radius:50px;white-space:nowrap;border:1px solid var(--blue-light)}
+    .job-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+    .job-meta-item{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:13.5px}
+    .job-meta-item i{color:var(--blue);font-size:15px}
+    .job-desc{color:var(--muted);font-size:14.5px;line-height:1.72;margin-bottom:18px}
+    .job-skills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+    .job-skill{background:var(--bg-soft);color:var(--text);font-family:'Poppins',sans-serif;font-weight:500;font-size:12px;padding:5px 13px;border-radius:50px;border:1.5px solid var(--border);transition:var(--t)}
+    .job-card:hover .job-skill{border-color:var(--blue-light);background:var(--blue-xlight);color:var(--blue)}
+
+    /* ── FOOTER ── */
+    #footer{background:var(--navy);padding:80px 0 0;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
+    #footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA,var(--blue));background-size:200% 100%;animation:shimmerLine 4s ease-in-out infinite}
+    @keyframes shimmerLine{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .footer-brand img{height:40px;filter:brightness(0) invert(1);margin-bottom:18px}
+    .footer-about{font-size:14px;line-height:1.78;margin-bottom:22px;max-width:260px}
+    .f-socials{display:flex;gap:10px}
+    .f-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:18px;transition:var(--t)}
+    .f-soc:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    .f-head{font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;color:var(--white);margin-bottom:20px;padding-bottom:10px;position:relative}
+    .f-head::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--blue);border-radius:2px}
+    .f-list{list-style:none;padding:0}
+    .f-list li{margin-bottom:10px}
+    .f-list a{color:rgba(255,255,255,.6);font-size:14px;transition:var(--t);display:flex;align-items:center;gap:6px}
+    .f-list a:hover{color:var(--white);padding-left:5px}
+    .f-list a i{color:var(--blue);font-size:15px;flex-shrink:0}
+    .f-contact-row{display:flex;gap:12px;margin-bottom:14px;font-size:14px}
+    .f-contact-row i{color:var(--blue);font-size:19px;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:56px;padding:20px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.35)}
+    #btt{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:var(--t);z-index:9999;cursor:pointer;box-shadow:0 4px 20px rgba(37,102,200,.45)}
+    #btt::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,102,200,.4);opacity:0}
+    #btt.show{opacity:1;visibility:visible}
+    #btt.show::after{opacity:1;animation:bttPing 2.4s ease-out infinite 1s}
+    #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
+    @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin Technohub">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <div class="nav-ham"><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta active-page" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="pb-stripes"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="pb-badge" data-aos="fade-down"><i class="bx bx-message-dots me-1"></i>Get In Touch</div>
+    <h1 class="pb-title" data-aos="fade-up" data-aos-delay="80">Contact &amp; Career</h1>
+    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="160">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Contact &amp; Career</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact-section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-badge">Contact Us</div>
+      <h2 class="s-title">Let's Start a <span>Conversation</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">Whether you have a project in mind or just want to say hello — we'd love to hear from you.</p>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      
+
+      <!-- Info + Map -->
+      <div class="col-md-6 col-lg-5 order-1 order-md-1" data-aos="fade-right" data-aos-duration="800">
+        <div class="contact-info-card">
+          <h3>Contact Information</h3>
+          <p>Reach out to us through any of the channels below. We typically respond within one business day.</p>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="bx bx-map"></i></div>
+            <div>
+              <div class="ci-label">Office Address</div>
+              <div class="ci-value">C-1034 Siddhi Vinayak Tower,<br>Makarba, Ahmedabad-380051,<br>Gujarat, India</div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="bx bx-envelope"></i></div>
+            <div>
+              <div class="ci-label">Email Us</div>
+              <div class="ci-value">
+                <a href="mailto:info@welkinhub.in">info@welkinhub.in</a><br>
+                <a href="mailto:hr@welkinhub.in">hr@welkinhub.in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="bx bx-phone"></i></div>
+            <div>
+              <div class="ci-label">Call Us</div>
+              <div class="ci-value">
+                <a href="tel:+918200193827">+91 82001 93827</a><br>
+                <a href="tel:+919664846337">+91 96648 46337</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="bx bx-time"></i></div>
+            <div>
+              <div class="ci-label">Working Hours</div>
+              <div class="ci-value">Monday – Saturday<br>9:00 AM – 6:30 PM IST</div>
+            </div>
+          </div>
+
+          <div class="ci-socials">
+            <a href="https://www.facebook.com/people/Welkin-Ithub/100070013418901/" target="_blank" rel="noopener" class="ci-soc"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/welkin.technohub?igsh=eXRicmwxamNzcWVr" target="_blank" rel="noopener" class="ci-soc"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/80903734/" target="_blank" rel="noopener" class="ci-soc"><i class="bx bxl-linkedin"></i></a>
+          </div>
+
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.805962423122!2d72.49717751480023!3d22.994161684967487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0afb315f39%3A0x9217289f1572d6c3!2sWelkin%20Technohub%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1643895431990!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Welkin Technohub Location"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form with floating labels — LEFT on mobile, RIGHT on desktop via order -->
+      <div class="col-md-6 col-lg-7 order-2 order-md-2" data-aos="fade-left" data-aos-duration="800">
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <p>Fill in the form and we'll get back to you within 24 hours. For urgent queries, please call us directly.</p>
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="fl-group">
+                  <label for="name">Full Name <span class="req">*</span></label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="fl-group">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="fl-group">
+                  <label for="phone">Contact Number</label>
+                  <input type="tel" class="form-control" id="phone" name="contact" placeholder="+91 XXXXX XXXXX">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="fl-group">
+                  <label for="inquiry">Inquiry Type</label>
+                  <div class="select-wrap">
+                    <select class="form-control empty" id="inquiry" name="inquiry">
+                      <option value="" disabled selected>Select inquiry type</option>
+                      <option value="web-dev">Web Development Project</option>
+                      <option value="mobile-app">Mobile App Development</option>
+                      <option value="uiux">UI/UX Design</option>
+                      <option value="qa">QA &amp; Testing</option>
+                      <option value="career">Career / Job Application</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <i class="bx bx-chevron-down select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="fl-group">
+                  <label for="message">Your Message <span class="req">*</span></label>
+                  <textarea class="form-control" id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                </div>
+              </div>
+              <div class="col-12 mt-2">
+                <button type="submit" class="btn-submit" id="submitBtn">Send Message <i class="bx bx-send"></i></button>
+              </div>
+            </div>
+            <div class="form-msg success" id="formSuccess"><i class="bx bx-check-circle"></i> Your message has been sent! We'll get back to you shortly.</div>
+            <div class="form-msg error-msg" id="formError"><i class="bx bx-error-circle"></i> <span id="formErrorText">Please fill in all required fields.</span></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAREER SECTION -->
+<section id="career">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-badge">We're Hiring</div>
+      <h2 class="s-title">Join Our <span>Growing Team</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">We're looking for talented individuals who are passionate about technology and want to build something meaningful.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Laravel Developer -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">Laravel Developer</div>
+            <span class="job-badge-type">Full-Time</span>
+          </div>
+          <div class="job-meta">
+            <span class="job-meta-item"><i class="bx bx-map-pin"></i>Ahmedabad, Gujarat</span>
+            <span class="job-meta-item"><i class="bx bx-time-five"></i>1+ Years Exp.</span>
+          </div>
+          <p class="job-desc">We're looking for a skilled Laravel Developer to design, develop, and maintain high-quality PHP web applications. Proficiency in MVC architecture and RESTful APIs is essential.</p>
+          <div class="job-skills">
+            <span class="job-skill">PHP</span>
+            <span class="job-skill">Laravel</span>
+            <span class="job-skill">MySQL</span>
+            <span class="job-skill">REST API</span>
+            <span class="job-skill">Git</span>
+          </div>
+          <a href="mailto:hr@welkinhub.in?subject=Application for Laravel Developer" class="btn-outline-sm">Apply Now <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- React.js Developer -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">React.js Developer</div>
+            <span class="job-badge-type">Full-Time</span>
+          </div>
+          <div class="job-meta">
+            <span class="job-meta-item"><i class="bx bx-map-pin"></i>Ahmedabad, Gujarat</span>
+            <span class="job-meta-item"><i class="bx bx-time-five"></i>1+ Years Exp.</span>
+          </div>
+          <p class="job-desc">We need a front-end focused React developer to build dynamic, responsive UI components and integrate with backend APIs. Experience with React Hooks and Redux is a plus.</p>
+          <div class="job-skills">
+            <span class="job-skill">React.js</span>
+            <span class="job-skill">JavaScript</span>
+            <span class="job-skill">HTML5/CSS3</span>
+            <span class="job-skill">Redux</span>
+            <span class="job-skill">REST API</span>
+          </div>
+          <a href="mailto:hr@welkinhub.in?subject=Application for React.js Developer" class="btn-outline-sm">Apply Now <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- UI/UX Designer -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title">UI/UX Designer</div>
+            <span class="job-badge-type">Full-Time</span>
+          </div>
+          <div class="job-meta">
+            <span class="job-meta-item"><i class="bx bx-map-pin"></i>Ahmedabad, Gujarat</span>
+            <span class="job-meta-item"><i class="bx bx-time-five"></i>1+ Years Exp.</span>
+          </div>
+          <p class="job-desc">Seeking a creative UI/UX Designer to craft beautiful, user-centered interfaces for web and mobile products. Strong portfolio of shipped product designs required.</p>
+          <div class="job-skills">
+            <span class="job-skill">Figma</span>
+            <span class="job-skill">Adobe XD</span>
+            <span class="job-skill">Prototyping</span>
+            <span class="job-skill">Wireframing</span>
+            <span class="job-skill">Design Systems</span>
+          </div>
+          <a href="mailto:hr@welkinhub.in?subject=Application for UI/UX Designer" class="btn-outline-sm">Apply Now <i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <p style="color:var(--muted);font-size:15px;margin-bottom:20px">Don't see a role that fits? We're always interested in talented people.</p>
+      <a href="mailto:hr@welkinhub.in?subject=General Application" class="btn-blue">Send Open Application <i class="bx bx-envelope"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="footer-brand"><img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin"></div>
+        <p class="footer-about">A professional IT services company delivering custom web, mobile, and enterprise solutions from Ahmedabad, Gujarat, India.</p>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/people/Welkin-Ithub/100070013418901/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/welkin.technohub?igsh=eXRicmwxamNzcWVr" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/80903734/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="f-head">Quick Links</div>
+        <ul class="f-list">
+          <li><a href="index.html"><i class="bx bx-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="bx bx-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
+          <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
+          <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="f-head">Services</div>
+        <ul class="f-list">
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Web Development</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Mobile Apps</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>UI/UX Design</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>QA &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="f-head">Contact Info</div>
+        <div class="f-contact-row"><i class="bx bx-map"></i><span>C-1034 Siddhi Vinayak Tower, Makarba, Ahmedabad-380051, Gujarat, India</span></div>
+        <div class="f-contact-row"><i class="bx bx-envelope"></i><span>info@welkinhub.in<br>hr@welkinhub.in</span></div>
+        <div class="f-contact-row"><i class="bx bx-phone"></i><span>+91 82001 93827<br>+91 96648 46337</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">&copy; 2025 Welkin Technohub PVT.LTD. All Rights Reserved. Designed &amp; Developed by Welkin Technohub.</div>
+  </div>
+</footer>
+
+<a href="#" id="btt" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+  const btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>320));
+  btt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+  const toggler=document.querySelector('.navbar-toggler');
+  const navMenu=document.getElementById('navMenu');
+  toggler.addEventListener('click',function(){
+    const open=navMenu.classList.toggle('show');
+    toggler.classList.toggle('collapsed',!open);
+    toggler.setAttribute('aria-expanded',open);
+  });
+  navMenu.querySelectorAll('.nav-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+      if(window.innerWidth<992){
+        navMenu.classList.remove('show');
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // Select placeholder color
+  const selectEl=document.getElementById('inquiry');
+  selectEl.addEventListener('change',()=>selectEl.classList.remove('empty'));
+
+  document.getElementById('contactForm').addEventListener('submit',async function(e){
+    e.preventDefault();
+    const name=document.getElementById('name').value.trim();
+    const email=document.getElementById('email').value.trim();
+    const message=document.getElementById('message').value.trim();
+    const success=document.getElementById('formSuccess');
+    const error=document.getElementById('formError');
+    const errorText=document.getElementById('formErrorText');
+    const btn=document.getElementById('submitBtn');
+
+    success.style.display='none';
+    error.style.display='none';
+
+    if(!name||!email||!message){
+      errorText.textContent='Please fill in all required fields.';
+      error.style.display='flex';
+      error.scrollIntoView({behavior:'smooth',block:'nearest'});
+      return;
+    }
+    const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if(!emailOk){
+      errorText.textContent='Please enter a valid email address.';
+      error.style.display='flex';
+      return;
+    }
+
+    btn.disabled=true;
+    btn.innerHTML='Sending… <i class="bx bx-loader-alt bx-spin"></i>';
+
+    try{
+      const res=await fetch('forms/contact.php',{method:'POST',body:new FormData(this)});
+      const data=await res.json();
+      if(data.status==='success'){
+        success.style.display='flex';
+        this.reset();
+        selectEl.classList.add('empty');
+        success.scrollIntoView({behavior:'smooth',block:'nearest'});
+      }else{
+        errorText.textContent=data.message||'Failed to send message. Please try again or contact us directly.';
+        error.style.display='flex';
+      }
+    }catch(err){
+      errorText.textContent='Failed to send message. Please try again or contact us directly.';
+      error.style.display='flex';
+    }finally{
+      btn.disabled=false;
+      btn.innerHTML='Send Message <i class="bx bx-send"></i>';
+    }
+  });
+</script>
+</body>
+</html>

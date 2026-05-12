@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technologies — Welkin Technohub PVT.LTD</title>
+  <meta name="description" content="Technologies we work with at Welkin Technohub — PHP, .Net, iOS, Android, React.js, Angular.js, MongoDB, MySQL, WordPress and more.">
+  <link rel="icon" href="assets/img/favicon32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <style>
+    :root{--blue:#2566C8;--blue-dark:#1a4fa0;--blue-light:#dbeafe;--blue-xlight:#EEF4FF;--navy:#0D1B3E;--text:#111827;--muted:#6B7280;--border:#E5E7EB;--white:#fff;--bg-soft:#F8FAFF;--shadow:0 4px 24px rgba(37,102,200,.08);--shadow-lg:0 16px 48px rgba(37,102,200,.16);--shadow-xl:0 24px 64px rgba(37,102,200,.22);--radius:16px;--radius-sm:10px;--t:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;animation:pgFadeIn .55s ease both}
+    @keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
+    a{text-decoration:none;transition:var(--t)}
+    img{max-width:100%}
+    p{margin-bottom:0}
+
+    /* ── NAVBAR ── */
+    #mainNav{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:var(--t);z-index:1000}
+    #mainNav.scrolled{background:rgba(255,255,255,.98);box-shadow:0 4px 32px rgba(0,0,0,.10);padding:9px 0}
+    .navbar-brand img{height:46px;transition:var(--t)}
+    .navbar-toggler{border:none;background:none;padding:6px;outline:none!important;box-shadow:none!important}
+    .nav-ham{display:flex;flex-direction:column;gap:5px;width:24px}
+    .nav-ham span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:all .32s cubic-bezier(.4,0,.2,1)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-link{font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--navy)!important;padding:6px 14px!important;position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .28s cubic-bezier(.4,0,.2,1);border-radius:2px;transform-origin:center}
+    .nav-link:hover::after,.nav-link.active-page::after{transform:scaleX(1)}
+    .nav-link.active-page{color:var(--blue)!important;font-weight:600}
+    .nav-cta{background:var(--blue)!important;color:var(--white)!important;border-radius:50px!important;padding:9px 24px!important;margin-left:8px;box-shadow:0 4px 16px rgba(37,102,200,.28)}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+    @media(max-width:991px){.navbar-nav{padding:12px 0 20px}.nav-link{padding:10px 8px!important;min-height:44px;display:flex;align-items:center}.nav-cta{margin:10px 8px 0!important;text-align:center;justify-content:center}}
+    @media(max-width:991px){#navMenu{display:block!important;max-height:0;overflow:hidden;transition:max-height .35s ease}#navMenu.show{max-height:500px}}
+
+    /* ── BUTTONS ── */
+    .btn-white{background:var(--white);color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,.3);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-white:hover{background:var(--blue-xlight);color:var(--blue);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-outline:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+
+    /* ── SECTION TITLE SYSTEM ── */
+    .s-badge{display:inline-flex;align-items:center;gap:7px;background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px;border:1px solid var(--blue-light)}
+    .s-badge::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulseDot 2s ease infinite}
+    @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.5}}
+    .s-title{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
+    .s-title span{color:var(--blue)}
+    .s-line{width:52px;height:4px;background:linear-gradient(90deg,var(--blue),#60A5FA);border-radius:2px;margin:14px 0 24px}
+    .s-line.c{margin:14px auto 24px}
+    .s-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.78}
+
+    /* ── PAGE BANNER ── */
+    .page-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);padding:140px 0 70px;position:relative;overflow:hidden}
+    .pb-stripes{position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 80px);pointer-events:none}
+    .page-banner::before{content:'';position:absolute;right:-140px;top:-140px;width:560px;height:560px;border:90px solid rgba(255,255,255,.04);border-radius:50%;animation:bannerRot 30s linear infinite}
+    @keyframes bannerRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .pb-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,102,200,.3);color:rgba(255,255,255,.92);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(255,255,255,.15)}
+    .pb-title{font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-.8px}
+    .breadcrumb{background:none;padding:0;margin:0}
+    .breadcrumb-item a{color:rgba(255,255,255,.55);font-size:14px}
+    .breadcrumb-item a:hover{color:rgba(255,255,255,.9)}
+    .breadcrumb-item.active{color:rgba(255,255,255,.85);font-size:14px}
+    .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
+
+    /* ── TECH FILTER ── */
+    #tech-section{padding:104px 0;background:var(--bg-soft)}
+    .filter-wrap{position:relative;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;background:var(--white);padding:8px;border-radius:50px;border:1.5px solid var(--border);display:inline-flex;left:50%;transform:translateX(-50%)}
+    .ftab{padding:9px 22px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;transition:var(--t);border:none;background:transparent;color:var(--muted);min-height:40px;position:relative;z-index:1}
+    .ftab:hover{color:var(--blue)}
+    .ftab.active{background:var(--blue);color:var(--white);box-shadow:0 4px 14px rgba(37,102,200,.35)}
+    .tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+    @media(max-width:991px){.tech-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:575px){.tech-grid{grid-template-columns:repeat(2,1fr)}.filter-wrap{padding:6px;border-radius:16px;flex-direction:column;left:auto;transform:none}.ftab{border-radius:10px}}
+    .tech-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:var(--t);cursor:default;position:relative;overflow:hidden}
+    .tech-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,102,200,.04),transparent);opacity:0;transition:var(--t)}
+    .tech-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:var(--blue-light)}
+    .tech-card:hover::before{opacity:1}
+    .tech-card img{width:72px;height:72px;object-fit:contain;margin-bottom:14px;transition:var(--t)}
+    .tech-card:hover img{transform:scale(1.1)}
+    .tech-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:var(--navy)}
+    .tech-cat{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+    .tech-card.hidden{display:none}
+    .tech-card.pop-in{animation:techPopIn .35s cubic-bezier(.34,1.56,.64,1) both}
+    @keyframes techPopIn{from{opacity:0;transform:scale(.8) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+    /* ── EXPERTISE AREAS ── */
+    #expertise{padding:104px 0}
+    .exp-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:34px 26px;height:100%;transition:var(--t);position:relative;overflow:hidden}
+    .exp-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+    .exp-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-xl);border-color:transparent}
+    .exp-card:hover::after{transform:scaleX(1)}
+    .exp-icon{width:56px;height:56px;background:var(--blue-xlight);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:26px;margin-bottom:18px;transition:var(--t)}
+    .exp-card:hover .exp-icon{background:var(--blue);color:var(--white);transform:scale(1.06) rotate(-5deg)}
+    .exp-card h4{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+    .exp-card p{color:var(--muted);font-size:14.5px;line-height:1.72}
+
+    /* ── CTA ── */
+    #cta-tech{padding:96px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);position:relative;overflow:hidden;text-align:center}
+    #cta-tech::before{content:'';position:absolute;right:-120px;top:-120px;width:500px;height:500px;border:80px solid rgba(255,255,255,.04);border-radius:50%;animation:ctaRot 25s linear infinite}
+    @keyframes ctaRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .cta-h{font-size:clamp(24px,3vw,40px);font-weight:800;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+    .cta-p{color:rgba(255,255,255,.62);font-size:17px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75}
+
+    /* ── FOOTER ── */
+    #footer{background:var(--navy);padding:80px 0 0;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
+    #footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA,var(--blue));background-size:200% 100%;animation:shimmerLine 4s ease-in-out infinite}
+    @keyframes shimmerLine{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .footer-brand img{height:40px;filter:brightness(0) invert(1);margin-bottom:18px}
+    .footer-about{font-size:14px;line-height:1.78;margin-bottom:22px;max-width:260px}
+    .f-socials{display:flex;gap:10px}
+    .f-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:18px;transition:var(--t)}
+    .f-soc:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    .f-head{font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;color:var(--white);margin-bottom:20px;padding-bottom:10px;position:relative}
+    .f-head::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--blue);border-radius:2px}
+    .f-list{list-style:none;padding:0}
+    .f-list li{margin-bottom:10px}
+    .f-list a{color:rgba(255,255,255,.6);font-size:14px;transition:var(--t);display:flex;align-items:center;gap:6px}
+    .f-list a:hover{color:var(--white);padding-left:5px}
+    .f-list a i{color:var(--blue);font-size:15px;flex-shrink:0}
+    .f-contact-row{display:flex;gap:12px;margin-bottom:14px;font-size:14px}
+    .f-contact-row i{color:var(--blue);font-size:19px;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:56px;padding:20px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.35)}
+    #btt{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:var(--t);z-index:9999;cursor:pointer;box-shadow:0 4px 20px rgba(37,102,200,.45)}
+    #btt::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,102,200,.4);opacity:0}
+    #btt.show{opacity:1;visibility:visible}
+    #btt.show::after{opacity:1;animation:bttPing 2.4s ease-out infinite 1s}
+    #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
+    @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin Technohub">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <div class="nav-ham"><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active-page" href="technologies.html">Technologies</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="pb-stripes"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="pb-badge" data-aos="fade-down"><i class="bx bx-code-block me-1"></i>Technologies</div>
+    <h1 class="pb-title" data-aos="fade-up" data-aos-delay="80">Our Tech Stack</h1>
+    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="160">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Technologies</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- TECH FILTER SECTION -->
+<section id="tech-section">
+  <div class="container">
+    <div class="text-center mb-2" data-aos="fade-up">
+      <div class="s-badge">Tech Stack</div>
+      <h2 class="s-title">Technologies We <span>Work With</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">We stay current with the best tools and frameworks to deliver modern, future-proof solutions.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="80">
+      <div class="filter-wrap mb-4">
+        <button class="ftab active" data-filter="all">All</button>
+        <button class="ftab" data-filter="web">Web</button>
+        <button class="ftab" data-filter="mobile">Mobile</button>
+        <button class="ftab" data-filter="frontend">Front End</button>
+        <button class="ftab" data-filter="database">Database</button>
+        <button class="ftab" data-filter="cms">CMS</button>
+      </div>
+    </div>
+
+    <!-- Tech Grid -->
+    <div class="tech-grid" id="techGrid" data-aos="fade-up" data-aos-delay="160">
+      <div class="tech-card" data-cat="web">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+        <div class="tech-name">PHP</div><div class="tech-cat">Web</div>
+      </div>
+      <div class="tech-card" data-cat="web">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".Net">
+        <div class="tech-name">.Net</div><div class="tech-cat">Web</div>
+      </div>
+      <div class="tech-card" data-cat="mobile">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS">
+        <div class="tech-name">iOS</div><div class="tech-cat">Mobile</div>
+      </div>
+      <div class="tech-card" data-cat="mobile">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+        <div class="tech-name">Android</div><div class="tech-cat">Mobile</div>
+      </div>
+      <div class="tech-card" data-cat="frontend">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular.js">
+        <div class="tech-name">Angular.js</div><div class="tech-cat">Front End</div>
+      </div>
+      <div class="tech-card" data-cat="frontend">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js">
+        <div class="tech-name">React.js</div><div class="tech-cat">Front End</div>
+      </div>
+      <div class="tech-card" data-cat="frontend">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+        <div class="tech-name">HTML5</div><div class="tech-cat">Front End</div>
+      </div>
+      <div class="tech-card" data-cat="database">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+        <div class="tech-name">MongoDB</div><div class="tech-cat">Database</div>
+      </div>
+      <div class="tech-card" data-cat="database">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <div class="tech-name">MySQL</div><div class="tech-cat">Database</div>
+      </div>
+      <div class="tech-card" data-cat="database">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MsSQL">
+        <div class="tech-name">MsSQL</div><div class="tech-cat">Database</div>
+      </div>
+      <div class="tech-card" data-cat="database">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+        <div class="tech-name">Oracle</div><div class="tech-cat">Database</div>
+      </div>
+      <div class="tech-card" data-cat="cms">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress">
+        <div class="tech-name">WordPress</div><div class="tech-cat">CMS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE AREAS -->
+<section id="expertise">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="s-badge">Expertise</div>
+      <h2 class="s-title">Deep Domain <span>Expertise</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">Beyond technology, we bring industry knowledge that helps deliver solutions that truly solve business problems.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="exp-card">
+          <div class="exp-icon"><i class="bx bx-store"></i></div>
+          <h4>E-Commerce</h4>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.72">Online stores, marketplaces, payment gateways, inventory management, and customer portals.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+        <div class="exp-card">
+          <div class="exp-icon"><i class="bx bx-heart"></i></div>
+          <h4>Healthcare</h4>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.72">Patient management systems, appointment booking, medical records, and telemedicine platforms.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+        <div class="exp-card">
+          <div class="exp-icon"><i class="bx bx-building-house"></i></div>
+          <h4>Real Estate</h4>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.72">Property listing portals, CRM systems, virtual tours, and agent management dashboards.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+        <div class="exp-card">
+          <div class="exp-icon"><i class="bx bx-book-open"></i></div>
+          <h4>Education</h4>
+          <p style="color:var(--muted);font-size:14.5px;line-height:1.72">School ERP, LMS platforms, online assessment tools, and student information systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-tech">
+  <div class="container position-relative" style="z-index:2;text-align:center">
+    <p class="cta-h" data-aos="fade-up">Ready to Discuss Your Tech Stack?</p>
+    <p class="cta-p" data-aos="fade-up" data-aos-delay="80">Let's find the best technology fit for your project goals and team requirements.</p>
+    <div data-aos="fade-up" data-aos-delay="160" class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="contact.html" class="btn-white">Contact Us <i class="bx bx-envelope"></i></a>
+      <a href="services.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35)">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="footer-brand"><img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin"></div>
+        <p class="footer-about">A professional IT services company delivering custom web, mobile, and enterprise solutions from Ahmedabad, Gujarat, India.</p>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/people/Welkin-Ithub/100070013418901/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/welkin.technohub?igsh=eXRicmwxamNzcWVr" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/80903734/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="f-head">Quick Links</div>
+        <ul class="f-list">
+          <li><a href="index.html"><i class="bx bx-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="bx bx-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
+          <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
+          <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="f-head">Services</div>
+        <ul class="f-list">
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Web Development</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Mobile Apps</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>UI/UX Design</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>QA &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="f-head">Contact Info</div>
+        <div class="f-contact-row"><i class="bx bx-map"></i><span>C-1034 Siddhi Vinayak Tower, Makarba, Ahmedabad-380051, Gujarat, India</span></div>
+        <div class="f-contact-row"><i class="bx bx-envelope"></i><span>info@welkinhub.in<br>hr@welkinhub.in</span></div>
+        <div class="f-contact-row"><i class="bx bx-phone"></i><span>+91 82001 93827<br>+91 96648 46337</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">&copy; 2025 Welkin Technohub PVT.LTD. All Rights Reserved. Designed &amp; Developed by Welkin Technohub.</div>
+  </div>
+</footer>
+
+<a href="#" id="btt" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+  const btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>320));
+  btt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+  const toggler=document.querySelector('.navbar-toggler');
+  const navMenu=document.getElementById('navMenu');
+  toggler.addEventListener('click',function(){
+    const open=navMenu.classList.toggle('show');
+    toggler.classList.toggle('collapsed',!open);
+    toggler.setAttribute('aria-expanded',open);
+  });
+  navMenu.querySelectorAll('.nav-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+      if(window.innerWidth<992){
+        navMenu.classList.remove('show');
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // Tech filter with pop-in animation
+  const tabs=document.querySelectorAll('.ftab');
+  const cards=document.querySelectorAll('.tech-card');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const f=tab.dataset.filter;
+      let delay=0;
+      cards.forEach(card=>{
+        if(f==='all'||card.dataset.cat===f){
+          card.classList.remove('hidden');
+          card.classList.remove('pop-in');
+          void card.offsetWidth;
+          card.style.animationDelay=delay+'ms';
+          card.classList.add('pop-in');
+          delay+=40;
+        }else{
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

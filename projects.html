@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Welkin Technohub PVT.LTD</title>
+  <meta name="description" content="Explore projects delivered by Welkin Technohub — e-commerce platforms, healthcare systems, real estate apps, school ERP, restaurant POS, and more.">
+  <link rel="icon" href="assets/img/favicon32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+  <style>
+    :root{--blue:#2566C8;--blue-dark:#1a4fa0;--blue-light:#dbeafe;--blue-xlight:#EEF4FF;--navy:#0D1B3E;--text:#111827;--muted:#6B7280;--border:#E5E7EB;--white:#fff;--bg-soft:#F8FAFF;--shadow:0 4px 24px rgba(37,102,200,.08);--shadow-lg:0 16px 48px rgba(37,102,200,.16);--shadow-xl:0 24px 64px rgba(37,102,200,.22);--radius:16px;--radius-sm:10px;--t:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text);background:var(--white);line-height:1.7;overflow-x:hidden;animation:pgFadeIn .55s ease both}
+    @keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.25;color:var(--navy)}
+    a{text-decoration:none;transition:var(--t)}
+    img{max-width:100%}
+    p{margin-bottom:0}
+
+    /* ── NAVBAR ── */
+    #mainNav{background:rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:var(--t);z-index:1000}
+    #mainNav.scrolled{background:rgba(255,255,255,.98);box-shadow:0 4px 32px rgba(0,0,0,.10);padding:9px 0}
+    .navbar-brand img{height:46px;transition:var(--t)}
+    .navbar-toggler{border:none;background:none;padding:6px;outline:none!important;box-shadow:none!important}
+    .nav-ham{display:flex;flex-direction:column;gap:5px;width:24px}
+    .nav-ham span{display:block;height:2px;background:var(--navy);border-radius:2px;transition:all .32s cubic-bezier(.4,0,.2,1)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .navbar-toggler:not(.collapsed) .nav-ham span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-link{font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--navy)!important;padding:6px 14px!important;position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .28s cubic-bezier(.4,0,.2,1);border-radius:2px;transform-origin:center}
+    .nav-link:hover::after,.nav-link.active-page::after{transform:scaleX(1)}
+    .nav-link.active-page{color:var(--blue)!important;font-weight:600}
+    .nav-cta{background:var(--blue)!important;color:var(--white)!important;border-radius:50px!important;padding:9px 24px!important;margin-left:8px;box-shadow:0 4px 16px rgba(37,102,200,.28)}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+    @media(max-width:991px){.navbar-nav{padding:12px 0 20px}.nav-link{padding:10px 8px!important;min-height:44px;display:flex;align-items:center}.nav-cta{margin:10px 8px 0!important;text-align:center;justify-content:center}}
+    @media(max-width:991px){#navMenu{display:block!important;max-height:0;overflow:hidden;transition:max-height .35s ease}#navMenu.show{max-height:500px}}
+
+    /* ── BUTTONS ── */
+    .btn-white{background:var(--white);color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,.3);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-white:hover{background:var(--blue-xlight);color:var(--blue);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--blue);padding:14px 32px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:var(--t)}
+    .btn-outline:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+
+    /* ── SECTION TITLE SYSTEM ── */
+    .s-badge{display:inline-flex;align-items:center;gap:7px;background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px;border:1px solid var(--blue-light)}
+    .s-badge::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulseDot 2s ease infinite}
+    @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.5}}
+    .s-title{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px}
+    .s-title span{color:var(--blue)}
+    .s-line{width:52px;height:4px;background:linear-gradient(90deg,var(--blue),#60A5FA);border-radius:2px;margin:14px 0 24px}
+    .s-line.c{margin:14px auto 24px}
+    .s-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.78}
+
+    /* ── PAGE BANNER ── */
+    .page-banner{background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);padding:140px 0 70px;position:relative;overflow:hidden}
+    .pb-stripes{position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 80px);pointer-events:none}
+    .page-banner::before{content:'';position:absolute;right:-140px;top:-140px;width:560px;height:560px;border:90px solid rgba(255,255,255,.04);border-radius:50%;animation:bannerRot 30s linear infinite}
+    @keyframes bannerRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .pb-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,102,200,.3);color:rgba(255,255,255,.92);font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(255,255,255,.15)}
+    .pb-title{font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-.8px}
+    .breadcrumb{background:none;padding:0;margin:0}
+    .breadcrumb-item a{color:rgba(255,255,255,.55);font-size:14px}
+    .breadcrumb-item a:hover{color:rgba(255,255,255,.9)}
+    .breadcrumb-item.active{color:rgba(255,255,255,.85);font-size:14px}
+    .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
+
+    /* ── PROJECTS ── */
+    #projects-section{padding:104px 0;background:var(--bg-soft)}
+    .filter-wrap{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;background:var(--white);padding:8px;border-radius:50px;border:1.5px solid var(--border);margin-bottom:52px}
+    .ftab{padding:9px 22px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;transition:var(--t);border:none;background:transparent;color:var(--muted);min-height:40px}
+    .ftab:hover{color:var(--blue)}
+    .ftab.active{background:var(--blue);color:var(--white);box-shadow:0 4px 14px rgba(37,102,200,.35)}
+    @media(max-width:575px){.filter-wrap{border-radius:16px;flex-direction:column;width:100%}.ftab{border-radius:10px;text-align:center}}
+    .proj-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:var(--t);height:100%}
+    .proj-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl)}
+    .proj-img{position:relative;overflow:hidden;height:230px;background:var(--bg-soft)}
+    .proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+    .proj-card:hover .proj-img img{transform:scale(1.08)}
+    .proj-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,62,.92) 0%,rgba(13,27,62,.3) 60%,transparent 100%);opacity:0;transition:opacity .35s ease;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:24px}
+    .proj-card:hover .proj-overlay{opacity:1}
+    .proj-view-btn{background:var(--white);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;padding:10px 22px;border-radius:50px;display:inline-flex;align-items:center;gap:6px;transform:translateY(12px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1) .05s}
+    .proj-card:hover .proj-view-btn{transform:translateY(0);opacity:1}
+    .proj-view-btn:hover{background:var(--blue);color:var(--white)}
+    .proj-type-badge{position:absolute;top:14px;left:14px;background:var(--blue);color:var(--white);font-family:'Poppins',sans-serif;font-weight:700;font-size:11.5px;padding:5px 14px;border-radius:50px;letter-spacing:.5px;box-shadow:0 2px 8px rgba(37,102,200,.4)}
+    .proj-body{padding:24px 26px}
+    .proj-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;transition:var(--t)}
+    .proj-card:hover .proj-title{color:var(--blue)}
+    .proj-client{font-size:13px;color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:5px}
+    .proj-desc{color:var(--muted);font-size:14px;line-height:1.72;margin-bottom:16px}
+    .proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .proj-tag{background:var(--blue-xlight);color:var(--blue);font-family:'Poppins',sans-serif;font-weight:600;font-size:11.5px;padding:4px 12px;border-radius:50px;border:1px solid var(--blue-light);transition:var(--t)}
+    .proj-tag:hover{background:var(--blue);color:var(--white);border-color:var(--blue)}
+    .proj-item.hidden{display:none}
+    .proj-item.pop-in{animation:cardPopIn .4s cubic-bezier(.34,1.4,.64,1) both}
+    @keyframes cardPopIn{from{opacity:0;transform:scale(.92) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+    /* ── CTA ── */
+    #cta-proj{padding:96px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3a7c 100%);position:relative;overflow:hidden;text-align:center}
+    #cta-proj::before{content:'';position:absolute;right:-120px;top:-120px;width:500px;height:500px;border:80px solid rgba(255,255,255,.04);border-radius:50%;animation:ctaRot 25s linear infinite}
+    @keyframes ctaRot{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .cta-h{font-size:clamp(24px,3vw,40px);font-weight:800;color:var(--white);margin-bottom:14px;letter-spacing:-.5px}
+    .cta-p{color:rgba(255,255,255,.62);font-size:17px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75}
+
+    /* ── FOOTER ── */
+    #footer{background:var(--navy);padding:80px 0 0;color:rgba(255,255,255,.72);position:relative;overflow:hidden}
+    #footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA,var(--blue));background-size:200% 100%;animation:shimmerLine 4s ease-in-out infinite}
+    @keyframes shimmerLine{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .footer-brand img{height:40px;filter:brightness(0) invert(1);margin-bottom:18px}
+    .footer-about{font-size:14px;line-height:1.78;margin-bottom:22px;max-width:260px}
+    .f-socials{display:flex;gap:10px}
+    .f-soc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:18px;transition:var(--t)}
+    .f-soc:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+    .f-head{font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;color:var(--white);margin-bottom:20px;padding-bottom:10px;position:relative}
+    .f-head::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--blue);border-radius:2px}
+    .f-list{list-style:none;padding:0}
+    .f-list li{margin-bottom:10px}
+    .f-list a{color:rgba(255,255,255,.6);font-size:14px;transition:var(--t);display:flex;align-items:center;gap:6px}
+    .f-list a:hover{color:var(--white);padding-left:5px}
+    .f-list a i{color:var(--blue);font-size:15px;flex-shrink:0}
+    .f-contact-row{display:flex;gap:12px;margin-bottom:14px;font-size:14px}
+    .f-contact-row i{color:var(--blue);font-size:19px;flex-shrink:0;margin-top:2px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:56px;padding:20px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.35)}
+    #btt{position:fixed;bottom:28px;right:28px;width:48px;height:48px;background:var(--blue);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:var(--t);z-index:9999;cursor:pointer;box-shadow:0 4px 20px rgba(37,102,200,.45)}
+    #btt::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,102,200,.4);opacity:0}
+    #btt.show{opacity:1;visibility:visible}
+    #btt.show::after{opacity:1;animation:bttPing 2.4s ease-out infinite 1s}
+    #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
+    @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin Technohub">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <div class="nav-ham"><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
+        <li class="nav-item"><a class="nav-link active-page" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="pb-stripes"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="pb-badge" data-aos="fade-down"><i class="bx bx-grid-alt me-1"></i>Portfolio</div>
+    <h1 class="pb-title" data-aos="fade-up" data-aos-delay="80">Our Work</h1>
+    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="160">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Projects</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects-section">
+  <div class="container">
+    <div class="text-center mb-2" data-aos="fade-up">
+      <div class="s-badge">Portfolio</div>
+      <h2 class="s-title">Projects We're <span>Proud Of</span></h2>
+      <div class="s-line c"></div>
+      <p class="s-sub mx-auto">A selection of digital products we've designed and built for clients across various industries.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="80">
+      <div class="filter-wrap">
+        <button class="ftab active" data-filter="all">All Projects</button>
+        <button class="ftab" data-filter="wordpress">WordPress</button>
+        <button class="ftab" data-filter="ecommerce">eCommerce</button>
+        <button class="ftab" data-filter="laravel">Laravel</button>
+        <button class="ftab" data-filter="webapp">Web App</button>
+      </div>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="row gy-5 gx-4" id="projGrid">
+
+      <!-- Pixel Story -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#b8860b 0%,#f0c040 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-camera" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-camera"></i>Photography</div>
+            <h4 class="proj-title">Pixel Story</h4>
+            <p class="proj-desc">A visually immersive photography portfolio website for a professional studio, showcasing wedding, travel, and lifestyle shoots with a dynamic gallery and smooth carousels.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Concepts -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="80">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#00796b 0%,#26a69a 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-heart-circle" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress · Custom Theme</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-plus-medical"></i>Physiotherapy · Singapore</div>
+            <h4 class="proj-title">Core Concepts</h4>
+            <p class="proj-desc">A multi-page corporate website with a fully custom theme for Singapore's largest private physiotherapy group, featuring appointment booking, service listings, FAQs, and multi-clinic location support.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">jQuery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anmol Avalon -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="160">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#1565c0 0%,#42a5f5 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-building-house" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-buildings"></i>Real Estate</div>
+            <h4 class="proj-title">Anmol Avalon</h4>
+            <p class="proj-desc">A premium real estate project website for a residential construction business, featuring aerial renders, floor plan highlights, and an immersive showcase designed to attract prospective home buyers.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AK Ceramics -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#4527a0 0%,#7e57c2 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-cube-alt" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-grid-alt"></i>Ceramics &amp; Tiles</div>
+            <h4 class="proj-title">AK Ceramics</h4>
+            <p class="proj-desc">A product showcase and inquiry portal for a leading ceramic tile and sanitary ware supplier, featuring a rich gallery, product categories, showroom highlights, and a customer feedback module.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doonbeyt Design -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="80">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#558b2f 0%,#9ccc65 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-ruler" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-pencil"></i>Architecture &amp; Interior Design</div>
+            <h4 class="proj-title">Doonbeyt Design</h4>
+            <p class="proj-desc">A portfolio website for an architecture and interior design firm that transforms imagined spaces into personalised identities, with a minimalist project gallery unique to each project.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">WordPress</span>
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habteq Solution -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="160">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#0277bd 0%,#29b6f6 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-laptop" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-code-alt"></i>IT Outsourcing</div>
+            <h4 class="proj-title">Habteq Solution</h4>
+            <p class="proj-desc">A professional corporate website for an offshore IT development and outsourcing company, showcasing services, a solutions portfolio, and a blog — with a free project estimation form.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hamaxkayin Artlinks -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#b8860b 0%,#f5d060 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-paint" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-palette"></i>Culture &amp; Arts</div>
+            <h4 class="proj-title">Hamaxkayin Artlinks</h4>
+            <p class="proj-desc">A cultural event and forum platform for the first North American-Armenian youth arts program, connecting young Armenians with renowned artists through live online sessions and event registration.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sealand -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="wordpress" data-aos="fade-up" data-aos-delay="80">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#00695c 0%,#4db6ac 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-package" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">WordPress</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-ship"></i>Logistics &amp; Shipping</div>
+            <h4 class="proj-title">Sealand &ndash; A Maersk Company</h4>
+            <p class="proj-desc">A digital logistics platform for a Maersk integrator division enabling customers to track cargo, view sailing schedules, and book shipments online — combining local expertise with industry-leading tools.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hencemade -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="ecommerce" data-aos="fade-up" data-aos-delay="160">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#bf360c 0%,#ff7043 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-shopping-bag" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">eCommerce</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-hanger"></i>Fashion Retail</div>
+            <h4 class="proj-title">Hencemade</h4>
+            <p class="proj-desc">A fashion eCommerce store featuring limited-edition clothing collections, categorised product listings, shopping cart, and full payment gateway integration for a seamless mobile-first experience.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+              <span class="proj-tag">WooCommerce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gseed -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="ecommerce" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#2e7d32 0%,#66bb6a 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-leaf" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">eCommerce</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-nature"></i>Hydroponic Farming</div>
+            <h4 class="proj-title">Gseed</h4>
+            <p class="proj-desc">An online store for a hydroponic farming startup selling chemical-free mushrooms and fresh produce, with WooCommerce integration, payment gateway, and a community WhatsApp group feature.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">WordPress</span>
+              <span class="proj-tag">WooCommerce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spaccio -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="ecommerce" data-aos="fade-up" data-aos-delay="80">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#b71c1c 0%,#ef5350 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-store" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">eCommerce</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-tag"></i>Fashion · Portugal</div>
+            <h4 class="proj-title">Spaccio</h4>
+            <p class="proj-desc">A growing Portuguese fashion eCommerce platform featuring men's and women's clothing, accessories, a local store locator, and end-to-end WooCommerce checkout with payment gateway integration.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">WordPress</span>
+              <span class="proj-tag">WooCommerce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Athena -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="laravel" data-aos="fade-up" data-aos-delay="160">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#1565c0 0%,#64b5f6 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-line-chart" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">Laravel</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-trending-up"></i>Finance</div>
+            <h4 class="proj-title">Athena</h4>
+            <p class="proj-desc">A comprehensive finance management web application covering client portfolios, branch operations, product management, insurance renewal reminders, and a knowledge center for a financial services firm.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">Laravel</span>
+              <span class="proj-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temple ERP -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="laravel" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#4527a0 0%,#9575cd 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-star" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">Laravel</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-church"></i>Temple Management</div>
+            <h4 class="proj-title">Temple ERP</h4>
+            <p class="proj-desc">A full-featured ERP system for Hindu temple management, handling daily and periodic transactions, donation records, seva bookings, festival scheduling, and automated billing across all operations.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">Laravel</span>
+              <span class="proj-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bluechip -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="webapp" data-aos="fade-up" data-aos-delay="80">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#006064 0%,#00acc1 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-dumbbell" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">Web App</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-run"></i>Gym &amp; Fitness</div>
+            <h4 class="proj-title">Bluechip</h4>
+            <p class="proj-desc">A Gym CRM web application where members book trainer appointments and access personalised workout charts, while admins manage staff, equipment, and monitor monthly revenue trends on a live dashboard.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">CodeIgniter</span>
+              <span class="proj-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Atlantic City -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="webapp" data-aos="fade-up" data-aos-delay="160">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#37474f 0%,#78909c 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-map-alt" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">Web App</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-trip"></i>Travel &amp; Events</div>
+            <h4 class="proj-title">Atlantic City</h4>
+            <p class="proj-desc">A travel and event planning website for Atlantic City bachelor party packages, featuring a custom party builder, hotel and tee-time search, an event calendar, and special offers for group bookings.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">PHP</span>
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">jQuery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earnest Capital -->
+      <div class="col-md-6 col-lg-4 proj-item" data-cat="webapp" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#1a237e 0%,#3f51b5 100%);display:flex;align-items:center;justify-content:center">
+            <i class="bx bx-dollar-circle" style="font-size:72px;color:rgba(255,255,255,.35)"></i>
+            <div class="proj-type-badge">Web App</div>
+            <div class="proj-overlay">
+              <a href="contact.html" class="proj-view-btn"><i class="bx bx-link-external"></i>Enquire Now</a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-client"><i class="bx bx-bar-chart-alt-2"></i>Finance &amp; Investment</div>
+            <h4 class="proj-title">Earnest Capital</h4>
+            <p class="proj-desc">A corporate advisory website for a financial firm specialising in equity, derivatives, mutual funds, and insurance — featuring multi-plan comparison, 15+ years of expertise, and structured lead generation.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">HTML5</span>
+              <span class="proj-tag">CSS3</span>
+              <span class="proj-tag">jQuery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-proj">
+  <div class="container position-relative" style="z-index:2;text-align:center">
+    <p class="cta-h" data-aos="fade-up">Have a Similar Project in Mind?</p>
+    <p class="cta-p" data-aos="fade-up" data-aos-delay="80">Let's talk about how we can build something great for your business.</p>
+    <div data-aos="fade-up" data-aos-delay="160" class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="contact.html" class="btn-white">Start a Project <i class="bx bx-right-arrow-alt"></i></a>
+      <a href="services.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35)">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="footer-brand"><img src="assets/new_image/Welkin technohub new with W logo original color.png" alt="Welkin"></div>
+        <p class="footer-about">A professional IT services company delivering custom web, mobile, and enterprise solutions from Ahmedabad, Gujarat, India.</p>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/people/Welkin-Ithub/100070013418901/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/welkin.technohub?igsh=eXRicmwxamNzcWVr" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/80903734/" class="f-soc" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="f-head">Quick Links</div>
+        <ul class="f-list">
+          <li><a href="index.html"><i class="bx bx-chevron-right"></i>Home</a></li>
+          <li><a href="about.html"><i class="bx bx-chevron-right"></i>About Us</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
+          <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
+          <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="f-head">Services</div>
+        <ul class="f-list">
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Web Development</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>Mobile Apps</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>UI/UX Design</a></li>
+          <li><a href="services.html"><i class="bx bx-chevron-right"></i>QA &amp; Testing</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="f-head">Contact Info</div>
+        <div class="f-contact-row"><i class="bx bx-map"></i><span>C-1034 Siddhi Vinayak Tower, Makarba, Ahmedabad-380051, Gujarat, India</span></div>
+        <div class="f-contact-row"><i class="bx bx-envelope"></i><span>info@welkinhub.in<br>hr@welkinhub.in</span></div>
+        <div class="f-contact-row"><i class="bx bx-phone"></i><span>+91 82001 93827<br>+91 96648 46337</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">&copy; 2025 Welkin Technohub PVT.LTD. All Rights Reserved. Designed &amp; Developed by Welkin Technohub.</div>
+  </div>
+</footer>
+
+<a href="#" id="btt" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+  const btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>320));
+  btt.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+  const toggler=document.querySelector('.navbar-toggler');
+  const navMenu=document.getElementById('navMenu');
+  toggler.addEventListener('click',function(){
+    const open=navMenu.classList.toggle('show');
+    toggler.classList.toggle('collapsed',!open);
+    toggler.setAttribute('aria-expanded',open);
+  });
+  navMenu.querySelectorAll('.nav-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+      if(window.innerWidth<992){
+        navMenu.classList.remove('show');
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // Project filter with pop-in animation
+  const tabs=document.querySelectorAll('.ftab');
+  const items=document.querySelectorAll('.proj-item');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const f=tab.dataset.filter;
+      let delay=0;
+      items.forEach(item=>{
+        if(f==='all'||item.dataset.cat===f){
+          item.classList.remove('hidden');
+          item.classList.remove('pop-in');
+          void item.offsetWidth;
+          item.style.animationDelay=delay+'ms';
+          item.classList.add('pop-in');
+          delay+=60;
+        }else{
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
