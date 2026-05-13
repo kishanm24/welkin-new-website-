@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /forms/
+Disallow: /vendor/
+Disallow: /.git/
+
+Sitemap: https://welkinhub.in/sitemap.xml
