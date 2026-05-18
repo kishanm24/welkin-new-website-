@@ -128,7 +128,7 @@
     .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
 
     /* ── TECH FILTER ── */
-    #tech-section{padding:104px 0;background:var(--bg-soft)}
+    #tech-section{padding:80px 0;background:var(--bg-soft)}
     .filter-wrap{position:relative;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;background:var(--white);padding:8px;border-radius:50px;border:1.5px solid var(--border);display:inline-flex;left:50%;transform:translateX(-50%)}
     .ftab{padding:9px 22px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;transition:var(--t);border:none;background:transparent;color:var(--muted);min-height:40px;position:relative;z-index:1}
     .ftab:hover{color:var(--blue)}
@@ -149,7 +149,7 @@
     @keyframes techPopIn{from{opacity:0;transform:scale(.8) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
     /* ── EXPERTISE AREAS ── */
-    #expertise{padding:104px 0}
+    #expertise{padding:80px 0}
     .exp-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:34px 26px;height:100%;transition:var(--t);position:relative;overflow:hidden}
     .exp-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
     .exp-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-xl);border-color:transparent}
@@ -192,6 +192,23 @@
     #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
     @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1701907194169092');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1701907194169092&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -211,6 +228,7 @@
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link active-page" href="technologies.html">Technologies</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
         <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
       </ul>
     </div>
@@ -383,6 +401,7 @@
           <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
           <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
           <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="packages.html"><i class="bx bx-chevron-right"></i>Packages</a></li>
           <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
         </ul>
       </div>
@@ -458,6 +477,20 @@
       });
     });
   });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'';
+  if(href.startsWith('tel:'))
+    fbq('track','Contact',{content_name:'Phone'});
+  else if(href.startsWith('mailto:'))
+    fbq('track','Contact',{content_name:'Email'});
+  else if(href.includes('wa.me'))
+    fbq('track','Contact',{content_name:'WhatsApp'});
+  else if(href==='contact.html'&&(a.classList.contains('btn-blue')||a.classList.contains('nav-cta')||a.classList.contains('btn-white')||a.classList.contains('btn-outline')))
+    fbq('track','Lead',{content_name:'Contact CTA'});
+});
 </script>
 </body>
 </html>

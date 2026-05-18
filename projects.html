@@ -151,7 +151,7 @@
     .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
 
     /* ── PROJECTS ── */
-    #projects-section{padding:104px 0;background:var(--bg-soft)}
+    #projects-section{padding:80px 0;background:var(--bg-soft)}
     .filter-wrap{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;background:var(--white);padding:8px;border-radius:50px;border:1.5px solid var(--border);margin-bottom:52px}
     .ftab{padding:9px 22px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;transition:var(--t);border:none;background:transparent;color:var(--muted);min-height:40px}
     .ftab:hover{color:var(--blue)}
@@ -213,6 +213,23 @@
     #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
     @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1701907194169092');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1701907194169092&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -232,6 +249,7 @@
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
         <li class="nav-item"><a class="nav-link active-page" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
         <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
       </ul>
     </div>
@@ -677,6 +695,7 @@
           <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
           <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
           <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="packages.html"><i class="bx bx-chevron-right"></i>Packages</a></li>
           <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
         </ul>
       </div>
@@ -752,6 +771,20 @@
       });
     });
   });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'';
+  if(href.startsWith('tel:'))
+    fbq('track','Contact',{content_name:'Phone'});
+  else if(href.startsWith('mailto:'))
+    fbq('track','Contact',{content_name:'Email'});
+  else if(href.includes('wa.me'))
+    fbq('track','Contact',{content_name:'WhatsApp'});
+  else if(href==='contact.html'&&(a.classList.contains('btn-blue')||a.classList.contains('nav-cta')||a.classList.contains('btn-white')||a.classList.contains('btn-outline')))
+    fbq('track','Lead',{content_name:'Contact CTA'});
+});
 </script>
 </body>
 </html>

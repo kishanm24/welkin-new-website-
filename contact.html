@@ -207,7 +207,7 @@
     .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
 
     /* ── CONTACT SECTION ── */
-    #contact-section{padding:104px 0;background:var(--bg-soft)}
+    #contact-section{padding:80px 0;background:var(--bg-soft)}
     .contact-info-card{background:var(--white);border-radius:var(--radius);padding:38px 34px;box-shadow:var(--shadow);height:100%;border:1.5px solid var(--border)}
     .contact-info-card h3{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px}
     .contact-info-card > p{color:var(--muted);font-size:15px;line-height:1.72;margin-bottom:30px}
@@ -249,7 +249,7 @@
     .btn-submit:disabled{opacity:.65;cursor:not-allowed;transform:none;box-shadow:none}
 
     /* ── CAREER SECTION ── */
-    #career{padding:104px 0}
+    #career{padding:80px 0}
     .job-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:28px;height:100%;transition:var(--t);position:relative;overflow:hidden}
     .job-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue-light);transition:width .3s ease,background .3s ease}
     .job-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-xl);border-color:transparent}
@@ -291,7 +291,64 @@
     #btt.show::after{opacity:1;animation:bttPing 2.4s ease-out infinite 1s}
     #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
     @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+
+    /* ── WHATSAPP QUICK CONNECT (light theme) ── */
+    #wa-quick{padding:72px 0;background:var(--bg-soft);position:relative;overflow:hidden}
+    #wa-quick::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(37,211,102,.07),transparent 70%);pointer-events:none}
+    #wa-quick::after{content:'';position:absolute;left:-60px;bottom:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(37,102,200,.06),transparent 70%);pointer-events:none}
+    .wa-quick-card{background:var(--white);border-radius:var(--radius);padding:52px 56px;box-shadow:var(--shadow-lg);border:2px solid transparent;background-image:linear-gradient(var(--white),var(--white)),linear-gradient(135deg,#25D366 0%,var(--blue) 55%,#60A5FA 100%);background-origin:border-box;background-clip:padding-box,border-box;position:relative;overflow:hidden}
+    @media(max-width:575px){.wa-quick-card{padding:36px 24px}}
+    .wa-q-split{display:grid;grid-template-columns:1fr auto;gap:52px;align-items:center}
+    @media(max-width:767px){.wa-q-split{grid-template-columns:1fr;gap:32px;text-align:center}}
+    .wa-q-badge{display:inline-flex;align-items:center;gap:7px;background:#f0fdf4;color:#16a34a;font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px;border:1px solid #bbf7d0}
+    .wa-q-badge-dot{width:7px;height:7px;background:#25D366;border-radius:50%;flex-shrink:0;animation:waqDot 2s ease infinite}
+    @keyframes waqDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
+    .wa-q-title{font-size:clamp(22px,2.5vw,32px);font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:12px;letter-spacing:-.5px}
+    .wa-q-title span{color:#25D366}
+    .wa-q-sub{color:var(--muted);font-size:15px;line-height:1.78;margin-bottom:26px;max-width:440px}
+    @media(max-width:767px){.wa-q-sub{margin-left:auto;margin-right:auto}}
+    .wa-q-meta{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:30px}
+    @media(max-width:767px){.wa-q-meta{justify-content:center}}
+    .wa-q-meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text);font-family:'Poppins',sans-serif;font-weight:500}
+    .wa-q-meta-icon{width:32px;height:32px;background:var(--blue-xlight);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;flex-shrink:0;transition:var(--t)}
+    .wa-q-cta{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;padding:13px 28px;border-radius:50px;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 6px 24px rgba(37,211,102,.28);text-decoration:none}
+    .wa-q-cta:hover{background:#1ebe5a;color:#fff;transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,.44)}
+    .wa-q-visual{display:flex;align-items:center;justify-content:center;position:relative;width:160px;height:160px;flex-shrink:0}
+    @media(max-width:767px){.wa-q-visual{width:104px;height:104px;margin:0 auto}}
+    .wa-q-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(37,211,102,.22);animation:waqRing 3s ease-out infinite}
+    .wa-q-ring:nth-child(1){inset:0}
+    .wa-q-ring:nth-child(2){inset:-20px;border-color:rgba(37,211,102,.13);animation-delay:.8s}
+    .wa-q-ring:nth-child(3){inset:-40px;border-color:rgba(37,211,102,.07);animation-delay:1.6s}
+    @keyframes waqRing{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.4}}
+    .wa-q-icon{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#25D366,#1ebe5a);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 14px 44px rgba(37,211,102,.32);position:relative;z-index:1;flex-shrink:0}
+    @media(max-width:767px){.wa-q-icon{width:78px;height:78px}}
+    /* Floating WhatsApp */
+    #wa-float{position:fixed;bottom:28px;left:28px;z-index:9999;display:flex;align-items:center;text-decoration:none;cursor:pointer}
+    .wa-float-icon{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,.42);transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;z-index:1;flex-shrink:0}
+    .wa-float-icon::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,211,102,.35);animation:waPing 2.6s ease-out infinite 1.4s}
+    @keyframes waPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.9);opacity:0}}
+    .wa-float-label{background:var(--navy);color:#fff;padding:9px 18px 9px 22px;border-radius:0 50px 50px 0;margin-left:-14px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;white-space:nowrap;max-width:0;overflow:hidden;opacity:0;transition:all .35s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(0,0,0,.22);pointer-events:none;line-height:1.4}
+    .wa-float-label small{display:block;font-size:11px;font-weight:400;color:rgba(255,255,255,.45);margin-top:1px}
+    #wa-float:hover .wa-float-label{max-width:220px;opacity:1}
+    #wa-float:hover .wa-float-icon{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.6)}
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1701907194169092');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1701907194169092&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -311,6 +368,7 @@
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
         <li class="nav-item"><a class="nav-link nav-cta active-page" href="contact.html">Contact Us</a></li>
       </ul>
     </div>
@@ -329,6 +387,46 @@
         <li class="breadcrumb-item active">Contact &amp; Career</li>
       </ol>
     </nav>
+  </div>
+</section>
+
+<!-- WHATSAPP QUICK CONNECT -->
+<section id="wa-quick">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="wa-quick-card" data-aos="fade-up">
+      <div class="wa-q-split">
+        <div>
+          <div class="wa-q-badge">
+            <div class="wa-q-badge-dot"></div>
+            Prefer to Chat?
+          </div>
+          <h2 class="wa-q-title">Get answers fast —<br><span>message us on WhatsApp.</span></h2>
+          <p class="wa-q-sub">Skip the form and talk to our team directly. We're available during working hours and usually respond within minutes — no email chains, just quick answers.</p>
+          <div class="wa-q-meta">
+            <div class="wa-q-meta-item">
+              <div class="wa-q-meta-icon" style="background:#f0fdf4;color:#16a34a"><i class="bx bx-check-shield"></i></div>
+              <span>Available <strong>24 / 7</strong> for you</span>
+            </div>
+            <div class="wa-q-meta-item">
+              <div class="wa-q-meta-icon"><i class="bx bx-phone"></i></div>
+              +91 82001 93827
+            </div>
+          </div>
+          <a href="https://wa.me/918200193827?text=Hi%20Welkin%20Technohub!%20I%20have%20a%20project%20I%27d%20like%20to%20discuss." class="wa-q-cta" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Open WhatsApp
+          </a>
+        </div>
+        <div class="wa-q-visual">
+          <div class="wa-q-ring"></div>
+          <div class="wa-q-ring"></div>
+          <div class="wa-q-ring"></div>
+          <div class="wa-q-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -378,14 +476,6 @@
                 <a href="tel:+918200193827">+91 82001 93827</a><br>
                 <a href="tel:+919664846337">+91 96648 46337</a>
               </div>
-            </div>
-          </div>
-
-          <div class="ci-item">
-            <div class="ci-icon"><i class="bx bx-time"></i></div>
-            <div>
-              <div class="ci-label">Working Hours</div>
-              <div class="ci-value">Monday – Saturday<br>9:00 AM – 6:30 PM IST</div>
             </div>
           </div>
 
@@ -572,6 +662,7 @@
           <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
           <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
           <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="packages.html"><i class="bx bx-chevron-right"></i>Packages</a></li>
           <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
         </ul>
       </div>
@@ -598,6 +689,14 @@
 </footer>
 
 <a href="#" id="btt" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
+
+<a href="https://wa.me/918200193827?text=Hi%20Welkin%20Technohub!%20I%20have%20a%20project%20I%27d%20like%20to%20discuss." id="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="wa-float-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+  <div class="wa-float-label">Chat with us<small>Usually replies instantly</small></div>
+</a>
+
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script>
@@ -662,6 +761,7 @@
       const data=await res.json();
       if(data.status==='success'){
         success.style.display='flex';
+        fbq('track','Lead',{content_name:'Contact Form'});
         this.reset();
         selectEl.classList.add('empty');
         success.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -677,6 +777,18 @@
       btn.innerHTML='Send Message <i class="bx bx-send"></i>';
     }
   });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'';
+  if(href.startsWith('tel:'))
+    fbq('track','Contact',{content_name:'Phone'});
+  else if(href.startsWith('mailto:'))
+    fbq('track','Contact',{content_name:'Email'});
+  else if(href.includes('wa.me'))
+    fbq('track','Contact',{content_name:'WhatsApp'});
+});
 </script>
 </body>
 </html>

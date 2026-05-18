@@ -162,7 +162,7 @@
     .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.35);content:"›"}
 
     /* ── SERVICE DETAIL CARDS ── */
-    #services-detail{padding:104px 0}
+    #services-detail{padding:80px 0}
     .svc-detail-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:var(--t);height:100%;position:relative}
     .svc-detail-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl)}
     .sdc-header{padding:36px 32px 28px;background:var(--blue-xlight);position:relative;overflow:hidden}
@@ -188,7 +188,7 @@
     .tech-tag:hover{background:var(--blue);color:var(--white)}
 
     /* ── PROCESS ── */
-    #process{padding:104px 0;background:var(--bg-soft);position:relative;overflow:hidden}
+    #process{padding:80px 0;background:var(--bg-soft);position:relative;overflow:hidden}
     .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
     .proc-line{position:absolute;top:40px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:2px;background:var(--border);z-index:0;overflow:hidden}
     .proc-line-fill{height:100%;background:linear-gradient(90deg,var(--blue),#60A5FA);width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
@@ -235,6 +235,23 @@
     #btt:hover{background:var(--blue-dark);transform:translateY(-3px)}
     @keyframes bttPing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1701907194169092');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1701907194169092&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -254,6 +271,7 @@
         <li class="nav-item"><a class="nav-link active-page" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="technologies.html">Technologies</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
         <li class="nav-item"><a class="nav-link nav-cta" href="contact.html">Contact Us</a></li>
       </ul>
     </div>
@@ -467,6 +485,7 @@
           <li><a href="services.html"><i class="bx bx-chevron-right"></i>Services</a></li>
           <li><a href="technologies.html"><i class="bx bx-chevron-right"></i>Technologies</a></li>
           <li><a href="projects.html"><i class="bx bx-chevron-right"></i>Projects</a></li>
+          <li><a href="packages.html"><i class="bx bx-chevron-right"></i>Packages</a></li>
           <li><a href="contact.html"><i class="bx bx-chevron-right"></i>Contact</a></li>
         </ul>
       </div>
@@ -525,6 +544,20 @@
     entries.forEach(e=>{if(e.isIntersecting){lineEl.style.width='100%';ioLine.disconnect();}});
   },{threshold:.4});
   if(lineEl) ioLine.observe(document.getElementById('processSteps'));
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');if(!a)return;
+  var href=a.getAttribute('href')||'';
+  if(href.startsWith('tel:'))
+    fbq('track','Contact',{content_name:'Phone'});
+  else if(href.startsWith('mailto:'))
+    fbq('track','Contact',{content_name:'Email'});
+  else if(href.includes('wa.me'))
+    fbq('track','Contact',{content_name:'WhatsApp'});
+  else if(href==='contact.html'&&(a.classList.contains('btn-blue')||a.classList.contains('nav-cta')||a.classList.contains('btn-white')||a.classList.contains('btn-outline')))
+    fbq('track','Lead',{content_name:'Contact CTA'});
+});
 </script>
 </body>
 </html>
