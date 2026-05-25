@@ -1,3 +1,8 @@
 .DS_Store
 vendor/
 composer.lock
+
+# Claude Code
+.claude/skills/
+.agents/
+skills-lock.json
